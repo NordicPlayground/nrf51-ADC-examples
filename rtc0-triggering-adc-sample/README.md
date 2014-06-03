@@ -1,7 +1,9 @@
-nrf51-ADC-examples
+rtc0-triggering-adc-sample
 ==================
 
- This project contains code examples that show nrf51 internal ADC functionality.
+ This file shows internal nrf51 ADC functionality. ADC sampling is triggered with internal RTC timer.
+
+ See main.c for a detailed description of the application behavior. 
  
 Requirements
 ------------
@@ -9,8 +11,6 @@ Requirements
 - nRF51822 Development Kit version 2.1.0 or later
 
 The project may need modifications to work with other versions or other boards. 
-
-To compile it, clone the repository in the \nrf51822\Board\nrf6310\ folder.
 
 About this project
 ------------------
