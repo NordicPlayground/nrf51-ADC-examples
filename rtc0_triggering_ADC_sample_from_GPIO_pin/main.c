@@ -99,9 +99,6 @@ void ADC_IRQHandler(void)
 
   /* Write ADC result to port 1 */
  	nrf_gpio_port_write(NRF_GPIO_PORT_SELECT_PORT1, NRF_ADC->RESULT); 
-	
-	//Stop the external crystal
-	NRF_CLOCK->TASKS_HFCLKSTOP = 1;
 }
 
 
