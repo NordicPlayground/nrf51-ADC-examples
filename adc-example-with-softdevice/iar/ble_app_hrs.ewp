@@ -87,7 +87,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>6.70.1.5793</state>
+          <state>7.10.1.6733</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -163,7 +163,7 @@
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>29</version>
+        <version>30</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -176,6 +176,7 @@
           <state>DEBUG_NRF_USER</state>
           <state>BOARD_NRF6310</state>
           <state>BLE_STACK_SUPPORT_REQD</state>
+          <state>S110</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -236,7 +237,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>0000000</state>
+          <state>00000000</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -313,6 +314,8 @@
           <state>$TOOLKIT_DIR$\CMSIS\Include</state>
           <state>$PROJ_DIR$\..\..\..\..\..\Include\sd_common</state>
           <state>$PROJ_DIR$\..\..\..\..\..\Include\s110</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\Include\sdk</state>
+          <state>$PROJ_DIR$\..\..\..\..\..\Include\ble\device_manager</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -407,6 +410,11 @@
         </option>
         <option>
           <name>CCNoLiteralPool</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCOptStrategySlave</name>
+          <version>0</version>
           <state>0</state>
         </option>
       </data>
@@ -1106,7 +1114,7 @@
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>29</version>
+        <version>30</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1118,6 +1126,7 @@
           <state>NDEBUG</state>
           <state>NRF51</state>
           <state>BOARD_NRF6310</state>
+          <state>S110</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -1178,7 +1187,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>0000000</state>
+          <state>00000000</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -1347,6 +1356,11 @@
         </option>
         <option>
           <name>CCNoLiteralPool</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCOptStrategySlave</name>
+          <version>0</version>
           <state>0</state>
         </option>
       </data>
@@ -1894,9 +1908,6 @@
       <name>$PROJ_DIR$\..\..\..\..\..\Source\ble\ble_advdata.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\Source\ble\ble_bondmngr.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\..\..\..\..\Source\ble\ble_conn_params.c</name>
     </file>
     <file>
@@ -1919,6 +1930,9 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\Source\app_common\crc16.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\Source\ble\device_manager\device_manager_peripheral.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\Source\app_common\pstorage.c</name>
