@@ -7,7 +7,7 @@ simultaneous-adc-sampling-from-two-inputs
  
 Requirements
 ------------
-- nRF51 SDK version 5.2.0
+- nRF51 SDK version 6.0.0
 - nRF51822 Development Kit version 2.1.0 or later
 
 The project may need modifications to work with other versions or other boards. 
