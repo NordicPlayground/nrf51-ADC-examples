@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ProjectGui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_gui.xsd">
+
+  <SchemaVersion>-5.1</SchemaVersion>
+
+  <Header>### uVision Project, (C) Keil Software</Header>
+
+  <ViewPool/>
+
+  <SECTreeCtrl>
+    <View>
+      <WinId>38003</WinId>
+      <ViewName>Registers</ViewName>
+      <TableColWidths>115 275</TableColWidths>
+    </View>
+    <View>
+      <WinId>346</WinId>
+      <ViewName>Code Coverage</ViewName>
+      <TableColWidths>560 160</TableColWidths>
+    </View>
+    <View>
+      <WinId>204</WinId>
+      <ViewName>Performance Analyzer</ViewName>
+      <TableColWidths>720</TableColWidths>
+    </View>
+  </SECTreeCtrl>
+
+  <TreeListPane>
+    <View>
+      <WinId>1506</WinId>
+      <ViewName>Symbols</ViewName>
+      <UserString></UserString>
+      <TableColWidths>133 133 133</TableColWidths>
+    </View>
+    <View>
+      <WinId>1936</WinId>
+      <ViewName>Watch 1</ViewName>
+      <UserString></UserString>
+      <TableColWidths>133 133 133</TableColWidths>
+    </View>
+    <View>
+      <WinId>1937</WinId>
+      <ViewName>Watch 2</ViewName>
+      <UserString></UserString>
+      <TableColWidths>133 133 133</TableColWidths>
+    </View>
+    <View>
+      <WinId>1935</WinId>
+      <ViewName>Call Stack + Locals</ViewName>
+      <UserString></UserString>
+      <TableColWidths>133 133 133</TableColWidths>
+    </View>
+    <View>
+      <WinId>2506</WinId>
+      <ViewName>Trace Data</ViewName>
+      <UserString></UserString>
+      <TableColWidths>75 135 130 95 70 230 200 150</TableColWidths>
+    </View>
+  </TreeListPane>
+
+  <WindowSettings>
+    <LogicAnalizer>
+      <ShowLACursor>1</ShowLACursor>
+      <ShowSignalInfo>1</ShowSignalInfo>
+      <ShowCycles>0</ShowCycles>
+      <LeftSideBarSize>0</LeftSideBarSize>
+      <TimeBaseIndex>-1</TimeBaseIndex>
+    </LogicAnalizer>
+  </WindowSettings>
+
+  <WinLayoutEx>
+    <sActiveDebugView></sActiveDebugView>
+    <WindowPosition>
+      <length>44</length>
+      <flags>2</flags>
+      <showCmd>3</showCmd>
+      <MinPosition>
+        <xPos>-1</xPos>
+        <yPos>-1</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>-1</xPos>
+        <yPos>-1</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>226</Top>
+        <Left>2482</Left>
+        <Right>3506</Right>
+        <Bottom>880</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+    <MDIClientArea>
+      <RegID>0</RegID>
+      <MDITabState>
+        <Len>877</Len>
+        <Data>010000000400000001000000010000000100000001000000000000000200000000000000010000000100000000000000280000002800000001000000050000000000000001000000845A3A5C6E524635315F53444B5F7A69705C4E6F726469635C6E524635315F53444B5F392E302E305F326532333536325C6578616D706C65735C626C655F7065726970686572616C5F637573746F6D5C626C655F6170705F74656D706C6174655F5F4144435F73616D706C696E675F5F6170705F74726163655F5F4E55535C6D61696E2E6300000000066D61696E2E63000000009CC1B600FFFFFFFF785A3A5C6E524635315F53444B5F7A69705C4E6F726469635C6E524635315F53444B5F392E302E305F326532333536325C636F6D706F6E656E74735C736F66746465766963655C733133305C646F635C733133305F6E726635313832325F312E302E305F6C6963656E63655F61677265656D656E742E7478740000000029733133305F6E726635313832325F312E302E305F6C6963656E63655F61677265656D656E742E74787400000000BCA8E100FFFFFFFF605A3A5C6E524635315F53444B5F7A69705C4E6F726469635C6E524635315F53444B5F392E302E305F326532333536325C636F6D706F6E656E74735C626C655C626C655F6164766572746973696E675C626C655F6164766572746973696E672E630000000011626C655F6164766572746973696E672E6300000000F0A0A100FFFFFFFF565A3A5C6E524635315F53444B5F7A69705C4E6F726469635C6E524635315F53444B5F392E302E305F326532333536325C636F6D706F6E656E74735C6C69627261726965735C74726163655C6170705F74726163652E68000000000B6170705F74726163652E6800000000BECEA100FFFFFFFF5B5A3A5C6E524635315F53444B5F7A69705C4E6F726469635C6E524635315F53444B5F392E302E305F326532333536325C636F6D706F6E656E74735C647269766572735F6E72665C756172745C6170705F756172745F6669666F2E63000000000F6170705F756172745F6669666F2E6300000000FFDC7800FFFFFFFF0100000010000000C5D4F200FFDC7800BECEA100F0A0A100BCA8E1009CC1B600F7B88600D9ADC200A5C2D700B3A6BE00EAD6A300F6FA7D00B5E99D005FC3CF00C1838300CACAD5000100000000000000020000001409000074000000000F000015030000</Data>
+      </MDITabState>
+    </MDIClientArea>
+  </WinLayoutEx>
+
+  <MDIGroups>
+    <Orientation>1</Orientation>
+    <ActiveMDIGroup>0</ActiveMDIGroup>
+    <MDIGroup>
+      <Size>100</Size>
+      <ActiveTab>0</ActiveTab>
+      <Doc>
+        <Name>&lt;1&gt;..\..\..\..\..\..\components\softdevice\s130\doc\s130_nrf51822_1.0.0_licence_agreement.txt</Name>
+        <ColumnNumber>0</ColumnNumber>
+        <TopLine>1</TopLine>
+        <CurrentLine>1</CurrentLine>
+        <Folding>1</Folding>
+        <ContractedFolders></ContractedFolders>
+        <PaneID>0</PaneID>
+      </Doc>
+    </MDIGroup>
+  </MDIGroups>
+
+</ProjectGui>

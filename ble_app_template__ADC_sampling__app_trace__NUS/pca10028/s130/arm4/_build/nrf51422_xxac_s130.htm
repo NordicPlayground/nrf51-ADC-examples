@@ -1,0 +1,2074 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\_build\nrf51422_xxac_s130.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\_build\nrf51422_xxac_s130.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Wed Sep 09 11:42:16 2015
+<BR><P>
+<H3>Maximum Stack Usage =        336 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+main &rArr; ble_advertising_start &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+<P>
+<H3>
+Mutually Recursive functions
+</H3> <LI><a href="#[1]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1]">NMI_Handler</a><BR>
+ <LI><a href="#[2]">HardFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[2]">HardFault_Handler</a><BR>
+ <LI><a href="#[3]">SVC_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[3]">SVC_Handler</a><BR>
+ <LI><a href="#[4]">PendSV_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4]">PendSV_Handler</a><BR>
+ <LI><a href="#[5]">SysTick_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[5]">SysTick_Handler</a><BR>
+ <LI><a href="#[14]">CCM_AAR_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[14]">CCM_AAR_IRQHandler</a><BR>
+ <LI><a href="#[52]">__asm___11_app_timer_c_cd27f9c3__nrf_delay_us</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[52]">__asm___11_app_timer_c_cd27f9c3__nrf_delay_us</a><BR>
+ <LI><a href="#[86]">app_notify_error_state_transit</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[88]">sm_state_change</a><BR>
+ <LI><a href="#[88]">sm_state_change</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[c2]">cmd_process</a><BR>
+</UL>
+<P>
+<H3>
+Function Pointers
+</H3><UL>
+ <LI><a href="#[c]">ADC_IRQHandler</a> from main.o(i.ADC_IRQHandler) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[14]">CCM_AAR_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[13]">ECB_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[b]">GPIOTE_IRQHandler</a> from nrf_drv_gpiote.o(i.GPIOTE_IRQHandler) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[2]">HardFault_Handler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[18]">LPCOMP_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[1]">NMI_Handler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[6]">POWER_CLOCK_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[4]">PendSV_Handler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[17]">QDEC_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[7]">RADIO_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[12]">RNG_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[10]">RTC0_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[16]">RTC1_IRQHandler</a> from app_timer.o(i.RTC1_IRQHandler) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[0]">Reset_Handler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[9]">SPI0_TWI0_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[a]">SPI1_TWI1_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[3]">SVC_Handler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[19]">SWI0_IRQHandler</a> from app_timer.o(i.SWI0_IRQHandler) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[1a]">SWI1_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[1b]">SWI2_IRQHandler</a> from softdevice_handler.o(i.SWI2_IRQHandler) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[1c]">SWI3_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[1d]">SWI4_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[1e]">SWI5_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[5]">SysTick_Handler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[20]">SystemInit</a> from system_nrf51.o(i.SystemInit) referenced from arm_startup_nrf51.o(.text)
+ <LI><a href="#[11]">TEMP_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[d]">TIMER0_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[e]">TIMER1_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[f]">TIMER2_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[8]">UART0_IRQHandler</a> from app_uart_fifo.o(i.UART0_IRQHandler) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[15]">WDT_IRQHandler</a> from arm_startup_nrf51.o(.text) referenced from arm_startup_nrf51.o(RESET)
+ <LI><a href="#[21]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from arm_startup_nrf51.o(.text)
+ <LI><a href="#[32]">adc_sampling_timeout_handler</a> from main.o(i.adc_sampling_timeout_handler) referenced from main.o(i.main)
+ <LI><a href="#[2c]">alert_timer_handler</a> from bsp.o(i.alert_timer_handler) referenced from bsp.o(i.bsp_init)
+ <LI><a href="#[28]">ble_evt_dispatch</a> from main.o(i.ble_evt_dispatch) referenced from main.o(i.ble_stack_init)
+ <LI><a href="#[39]">bsp_button_event_handler</a> from bsp.o(i.bsp_button_event_handler) referenced 4 times from bsp.o(.constdata)
+ <LI><a href="#[33]">bsp_event_handler</a> from main.o(i.bsp_event_handler) referenced from main.o(i.main)
+ <LI><a href="#[2a]">button_timer_handler</a> from bsp.o(i.button_timer_handler) referenced from bsp.o(i.bsp_init)
+ <LI><a href="#[37]">conn_params_error_handler</a> from main.o(i.conn_params_error_handler) referenced from main.o(i.main)
+ <LI><a href="#[4d]">data_page_erase_state_run</a> from pstorage.o(i.data_page_erase_state_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[4c]">data_to_swap_write_state_run</a> from pstorage.o(i.data_to_swap_write_state_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[24]">detection_delay_timeout_handler</a> from app_button.o(i.detection_delay_timeout_handler) referenced from app_button.o(i.app_button_init)
+ <LI><a href="#[30]">device_manager_evt_handler</a> from main.o(i.device_manager_evt_handler) referenced from main.o(i.device_manager_init)
+ <LI><a href="#[31]">dm_pstorage_cb_handler</a> from device_manager_peripheral.o(i.dm_pstorage_cb_handler) referenced from device_manager_peripheral.o(i.dm_init)
+ <LI><a href="#[22]">fputc</a> from retarget.o(i.fputc) referenced from printf8.o(i.__0printf$8)
+ <LI><a href="#[44]">gattc_context_apply</a> from device_manager_peripheral.o(i.gattc_context_apply) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[40]">gattc_context_load</a> from device_manager_peripheral.o(i.gattc_context_load) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[3c]">gattc_context_store</a> from device_manager_peripheral.o(i.gattc_context_store) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[43]">gatts_context_apply</a> from device_manager_peripheral.o(i.gatts_context_apply) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[3f]">gatts_context_load</a> from device_manager_peripheral.o(i.gatts_context_load) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[3b]">gatts_context_store</a> from device_manager_peripheral.o(i.gatts_context_store) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[45]">gattsc_context_apply</a> from device_manager_peripheral.o(i.gattsc_context_apply) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[41]">gattsc_context_load</a> from device_manager_peripheral.o(i.gattsc_context_load) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[3d]">gattsc_context_store</a> from device_manager_peripheral.o(i.gattsc_context_store) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[23]">gpiote_event_handler</a> from app_button.o(i.gpiote_event_handler) referenced from app_button.o(i.app_button_init)
+ <LI><a href="#[26]">gpiote_uart_event_handler</a> from app_uart_fifo.o(i.gpiote_uart_event_handler) referenced from app_uart_fifo.o(i.app_uart_init)
+ <LI><a href="#[4f]">head_restore_state_run</a> from pstorage.o(i.head_restore_state_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[2b]">leds_timer_handler</a> from bsp.o(i.leds_timer_handler) referenced from bsp.o(i.bsp_init)
+ <LI><a href="#[1f]">main</a> from main.o(i.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
+ <LI><a href="#[42]">no_service_context_apply</a> from device_manager_peripheral.o(i.no_service_context_apply) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[3e]">no_service_context_load</a> from device_manager_peripheral.o(i.no_service_context_load) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[3a]">no_service_context_store</a> from device_manager_peripheral.o(i.no_service_context_store) referenced from device_manager_peripheral.o(.constdata)
+ <LI><a href="#[35]">nus_data_handler</a> from main.o(i.nus_data_handler) referenced from main.o(i.main)
+ <LI><a href="#[34]">on_adv_evt</a> from main.o(i.on_adv_evt) referenced from main.o(i.main)
+ <LI><a href="#[36]">on_conn_params_evt</a> from main.o(i.on_conn_params_evt) referenced from main.o(i.main)
+ <LI><a href="#[2f]">pstorage_store</a> from pstorage.o(i.pstorage_store) referenced from device_manager_peripheral.o(i.device_context_store)
+ <LI><a href="#[2f]">pstorage_store</a> from pstorage.o(i.pstorage_store) referenced from device_manager_peripheral.o(i.gatts_context_store)
+ <LI><a href="#[2e]">pstorage_update</a> from pstorage.o(i.pstorage_update) referenced from device_manager_peripheral.o(i.device_context_store)
+ <LI><a href="#[2e]">pstorage_update</a> from pstorage.o(i.pstorage_update) referenced from device_manager_peripheral.o(i.gatts_context_store)
+ <LI><a href="#[38]">softdevice_assertion_handler</a> from softdevice_handler.o(i.softdevice_assertion_handler) referenced from softdevice_handler.o(i.softdevice_handler_init)
+ <LI><a href="#[48]">state_erase_data_page_entry_run</a> from pstorage.o(i.state_erase_data_page_entry_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[4a]">state_restore_head_entry_run</a> from pstorage.o(i.state_restore_head_entry_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[49]">state_restore_tail_entry_run</a> from pstorage.o(i.state_restore_tail_entry_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[46]">state_swap_erase_entry_run</a> from pstorage.o(i.state_swap_erase_entry_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[47]">state_write_data_swap_entry_run</a> from pstorage.o(i.state_write_data_swap_entry_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[2d]">storage_operation_dummy_handler</a> from device_manager_peripheral.o(i.storage_operation_dummy_handler) referenced from device_manager_peripheral.o(i.device_context_store)
+ <LI><a href="#[4b]">swap_erase_state_run</a> from pstorage.o(i.swap_erase_state_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[29]">sys_evt_dispatch</a> from main.o(i.sys_evt_dispatch) referenced from main.o(i.ble_stack_init)
+ <LI><a href="#[4e]">tail_restore_state_run</a> from pstorage.o(i.tail_restore_state_run) referenced from pstorage.o(.constdata)
+ <LI><a href="#[25]">uart_error_handle</a> from app_trace.o(i.uart_error_handle) referenced from app_trace.o(i.app_trace_init)
+ <LI><a href="#[27]">update_timeout_handler</a> from ble_conn_params.o(i.update_timeout_handler) referenced from ble_conn_params.o(i.ble_conn_params_init)
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3>
+<P><STRONG><a name="[21]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(.text)
+</UL>
+<P><STRONG><a name="[ed]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+
+<P><STRONG><a name="[50]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+</UL>
+
+<P><STRONG><a name="[5b]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+</UL>
+
+<P><STRONG><a name="[ee]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+
+<P><STRONG><a name="[ef]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+
+<P><STRONG><a name="[f0]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+
+<P><STRONG><a name="[f1]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+
+<P><STRONG><a name="[f2]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+
+<P><STRONG><a name="[52]"></a>__asm___11_app_timer_c_cd27f9c3__nrf_delay_us</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, app_timer.o(.emb_text))
+<BR><BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___11_app_timer_c_cd27f9c3__nrf_delay_us
+</UL>
+<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___11_app_timer_c_cd27f9c3__nrf_delay_us
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc1_stop
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compare_reg_update
+</UL>
+
+<P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[1]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[2]"></a>HardFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardFault_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[3]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SVC_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SVC_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[4]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[5]"></a>SysTick_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[14]"></a>CCM_AAR_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CCM_AAR_IRQHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CCM_AAR_IRQHandler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[13]"></a>ECB_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[18]"></a>LPCOMP_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[6]"></a>POWER_CLOCK_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[17]"></a>QDEC_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[7]"></a>RADIO_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[12]"></a>RNG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[10]"></a>RTC0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[9]"></a>SPI0_TWI0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[a]"></a>SPI1_TWI1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[1a]"></a>SWI1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[1c]"></a>SWI3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[1d]"></a>SWI4_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[1e]"></a>SWI5_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[11]"></a>TEMP_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[d]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[e]"></a>TIMER1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[f]"></a>TIMER2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[15]"></a>WDT_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[f3]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+
+<P><STRONG><a name="[54]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = __aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_led_indication
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_swap_erase_entry_run
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_restore_tail_entry_run
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_data_erase_swap_entry_run
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_end
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_page_erase_required
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;head_restore_state_run
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_operation_execute
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_clear
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_pstorage_cb_handler
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod
+</UL>
+
+<P><STRONG><a name="[f4]"></a>__aeabi_idiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, idiv.o(.text), UNUSED)
+
+<P><STRONG><a name="[53]"></a>__aeabi_idivmod</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, idiv.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = __aeabi_idivmod &rArr; __aeabi_uidivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_register
+</UL>
+
+<P><STRONG><a name="[a5]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;service_data_encode
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;manuf_specific_data_encode
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_register
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_conn_params_on_ble_evt
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_conn_params_init
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_load
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_allocate
+</UL>
+
+<P><STRONG><a name="[9a]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_conn_params_init
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_init
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_store
+</UL>
+
+<P><STRONG><a name="[f5]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+
+<P><STRONG><a name="[56]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+</UL>
+
+<P><STRONG><a name="[f6]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+
+<P><STRONG><a name="[f7]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+
+<P><STRONG><a name="[55]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_manager_init
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;peer_instance_init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connection_instance_init
+</UL>
+
+<P><STRONG><a name="[9c]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_peer_address_clear
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_init
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_init
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tx_char_add
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rx_char_add
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_store
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_pstorage_cb_handler
+</UL>
+
+<P><STRONG><a name="[f8]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+
+<P><STRONG><a name="[57]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+</UL>
+
+<P><STRONG><a name="[cf]"></a>memcmp</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, memcmp.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = memcmp
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_store
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_pstorage_cb_handler
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_find
+</UL>
+
+<P><STRONG><a name="[58]"></a>__aeabi_uldivmod</STRONG> (Thumb, 96 bytes, Stack size 48 bytes, uldiv.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+</UL>
+<BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
+
+<P><STRONG><a name="[51]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
+</UL>
+<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
+</UL>
+
+<P><STRONG><a name="[f9]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+
+<P><STRONG><a name="[5a]"></a>__aeabi_llsl</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, llshl.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+</UL>
+
+<P><STRONG><a name="[fa]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llshl.o(.text), UNUSED)
+
+<P><STRONG><a name="[59]"></a>__aeabi_llsr</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, llushr.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+</UL>
+
+<P><STRONG><a name="[fb]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llushr.o(.text), UNUSED)
+
+<P><STRONG><a name="[c]"></a>ADC_IRQHandler</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, main.o(i.ADC_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = ADC_IRQHandler &rArr; ble_nus_string_send
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_nus_string_send
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_adc_result_to_leds
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_calibrate
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[b]"></a>GPIOTE_IRQHandler</STRONG> (Thumb, 234 bytes, Stack size 24 bytes, nrf_drv_gpiote.o(i.GPIOTE_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = GPIOTE_IRQHandler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpiote_event_is_set
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg_sense_set
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_port_get
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[16]"></a>RTC1_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, app_timer.o(i.RTC1_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = RTC1_IRQHandler &rArr; timer_timeouts_check
+</UL>
+<BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_timeouts_check
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[19]"></a>SWI0_IRQHandler</STRONG> (Thumb, 78 bytes, Stack size 32 bytes, app_timer.o(i.SWI0_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = SWI0_IRQHandler &rArr; list_insertions_handler &rArr; timer_list_insert
+</UL>
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;list_insertions_handler
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;list_deletions_handler
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;expired_timers_handler
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elapsed_ticks_acquire
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compare_reg_update
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[1b]"></a>SWI2_IRQHandler</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, softdevice_handler.o(i.SWI2_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SWI2_IRQHandler &rArr; intern_softdevice_events_execute
+</UL>
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;intern_softdevice_events_execute
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[20]"></a>SystemInit</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, system_nrf51.o(i.SystemInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SystemInit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_manual_peripheral_setup_needed
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(.text)
+</UL>
+<P><STRONG><a name="[8]"></a>UART0_IRQHandler</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, app_uart_fifo.o(i.UART0_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = UART0_IRQHandler &rArr; on_uart_event &rArr; action_tx_send &rArr; action_tx_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_fifo_put
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_uart_event
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
+</UL>
+<P><STRONG><a name="[6e]"></a>__0printf$8</STRONG> (Thumb, 24 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
+
+<P><STRONG><a name="[fc]"></a>__1printf$8</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8), UNUSED)
+
+<P><STRONG><a name="[5e]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_evt_notify
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_register
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_init
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_on_ble_evt
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nus_data_handler
+<LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_IRQHandler
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_trace_dump
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bond_data_load
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;peer_instance_init
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;no_service_context_store
+<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;no_service_context_load
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;no_service_context_apply
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattsc_context_store
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattsc_context_load
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattsc_context_apply
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_store
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_load
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_apply
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_context_store
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_context_load
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_context_apply
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_pstorage_cb_handler
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_free
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_find
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_allocate
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_context_store
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connection_instance_init
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connection_instance_allocate
+</UL>
+
+<P><STRONG><a name="[bd]"></a>__ARM_common_switch8</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, bsp.o(i.__ARM_common_switch8))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __ARM_common_switch8
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_led_indication
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_uart_event
+</UL>
+
+<P><STRONG><a name="[fd]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+
+<P><STRONG><a name="[fe]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+
+<P><STRONG><a name="[ff]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+
+<P><STRONG><a name="[74]"></a>action_tx_stop</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, app_uart_fifo.o(i.action_tx_stop))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = action_tx_stop
+</UL>
+<BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;action_tx_send
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_uart_event
+</UL>
+
+<P><STRONG><a name="[5c]"></a>adc_calibrate</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, main.o(i.adc_calibrate))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = adc_calibrate
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_IRQHandler
+</UL>
+
+<P><STRONG><a name="[7e]"></a>app_button_enable</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, app_button.o(i.app_button_enable))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = app_button_enable &rArr; nrf_drv_gpiote_in_event_enable
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_event_enable
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_init
+</UL>
+
+<P><STRONG><a name="[80]"></a>app_button_init</STRONG> (Thumb, 102 bytes, Stack size 24 bytes, app_button.o(i.app_button_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = app_button_init &rArr; nrf_drv_gpiote_in_init &rArr; channel_port_alloc
+</UL>
+<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_create
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_is_init
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_init
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_init
+</UL>
+
+<P><STRONG><a name="[69]"></a>app_error_handler</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, app_error.o(i.app_error_handler))
+<BR><BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_event_handler
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sleep_mode_enter
+<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_conn_params_evt
+<LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_adv_evt
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_manager_init
+<LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_manager_evt_handler
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;conn_params_error_handler
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
+<LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_dispatch
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_pstorage_cb_handler
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;intern_softdevice_events_execute
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI2_IRQHandler
+<LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_error_handle
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_timeouts_check
+</UL>
+
+<P><STRONG><a name="[73]"></a>app_fifo_get</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, app_fifo.o(i.app_fifo_get))
+<BR><BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;action_tx_send
+</UL>
+
+<P><STRONG><a name="[94]"></a>app_fifo_init</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, app_fifo.o(i.app_fifo_init))
+<BR><BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+</UL>
+
+<P><STRONG><a name="[6c]"></a>app_fifo_put</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, app_fifo.o(i.app_fifo_put))
+<BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_put
+<LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_IRQHandler
+</UL>
+
+<P><STRONG><a name="[84]"></a>app_timer_create</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, app_timer.o(i.app_timer_create))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = app_timer_create
+</UL>
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_button_init
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_init
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_conn_params_init
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[89]"></a>app_timer_init</STRONG> (Thumb, 164 bytes, Stack size 40 bytes, app_timer.o(i.app_timer_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = app_timer_init &rArr; rtc1_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc1_stop
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[8c]"></a>app_timer_start</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, app_timer.o(i.app_timer_start))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_op_alloc
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_id_get
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_handler_sched
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;conn_params_negotiation
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_led_indication
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_button_event_handler
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpiote_event_handler
+</UL>
+
+<P><STRONG><a name="[90]"></a>app_timer_stop</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, app_timer.o(i.app_timer_stop))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = app_timer_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_op_alloc
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_id_get
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_handler_sched
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_led_indication
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_button_event_handler
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_conn_params_on_ble_evt
+<LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpiote_event_handler
+</UL>
+
+<P><STRONG><a name="[91]"></a>app_trace_dump</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, app_trace.o(i.app_trace_dump))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = app_trace_dump &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_store
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_load
+</UL>
+
+<P><STRONG><a name="[92]"></a>app_trace_init</STRONG> (Thumb, 56 bytes, Stack size 40 bytes, app_trace.o(i.app_trace_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 132<LI>Call Chain = app_trace_init &rArr; app_uart_init &rArr; nrf_drv_gpiote_out_init &rArr; channel_port_alloc
+</UL>
+<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[93]"></a>app_uart_init</STRONG> (Thumb, 354 bytes, Stack size 48 bytes, app_uart_fifo.o(i.app_uart_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = app_uart_init &rArr; nrf_drv_gpiote_out_init &rArr; channel_port_alloc
+</UL>
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_out_init
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_is_init
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_init
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_is_set
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_init
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_event_enable
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_fifo_init
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_uart_event
+</UL>
+<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_trace_init
+</UL>
+
+<P><STRONG><a name="[97]"></a>app_uart_put</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, app_uart_fifo.o(i.app_uart_put))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = app_uart_put &rArr; on_uart_event &rArr; action_tx_send &rArr; action_tx_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_fifo_put
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_uart_event
+</UL>
+<BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
+</UL>
+
+<P><STRONG><a name="[98]"></a>ble_advdata_set</STRONG> (Thumb, 90 bytes, Stack size 88 bytes, ble_advdata.o(i.ble_advdata_set))
+<BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_encode
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_init
+</UL>
+
+<P><STRONG><a name="[99]"></a>ble_advertising_init</STRONG> (Thumb, 284 bytes, Stack size 16 bytes, ble_advertising.o(i.ble_advertising_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = ble_advertising_init &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_peer_address_clear
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advdata_set
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[9d]"></a>ble_advertising_on_ble_evt</STRONG> (Thumb, 144 bytes, Stack size 8 bytes, ble_advertising.o(i.ble_advertising_on_ble_evt))
+<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = ble_advertising_on_ble_evt &rArr; ble_advertising_start &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_dispatch
+</UL>
+
+<P><STRONG><a name="[9f]"></a>ble_advertising_on_sys_evt</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, ble_advertising.o(i.ble_advertising_on_sys_evt))
+<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = ble_advertising_on_sys_evt &rArr; ble_advertising_start &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+</UL>
+<BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_evt_dispatch
+</UL>
+
+<P><STRONG><a name="[a0]"></a>ble_advertising_restart_without_whitelist</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, ble_advertising.o(i.ble_advertising_restart_without_whitelist))
+<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = ble_advertising_restart_without_whitelist &rArr; ble_advertising_start &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+</UL>
+<BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_event_handler
+</UL>
+
+<P><STRONG><a name="[9e]"></a>ble_advertising_start</STRONG> (Thumb, 500 bytes, Stack size 48 bytes, ble_advertising.o(i.ble_advertising_start))
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = ble_advertising_start &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_access_status_get
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;whitelist_has_entries
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;peer_address_exists
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_peer_address_clear
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advdata_set
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_restart_without_whitelist
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_on_sys_evt
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_on_ble_evt
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[a4]"></a>ble_conn_params_init</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, ble_conn_params.o(i.ble_conn_params_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = ble_conn_params_init &rArr; app_timer_create
+</UL>
+<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_create
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[a6]"></a>ble_conn_params_on_ble_evt</STRONG> (Thumb, 134 bytes, Stack size 24 bytes, ble_conn_params.o(i.ble_conn_params_on_ble_evt))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = ble_conn_params_on_ble_evt &rArr; conn_params_negotiation &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;conn_params_negotiation
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_stop
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_dispatch
+</UL>
+
+<P><STRONG><a name="[ac]"></a>ble_nus_init</STRONG> (Thumb, 98 bytes, Stack size 32 bytes, ble_nus.o(i.ble_nus_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = ble_nus_init &rArr; rx_char_add
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tx_char_add
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rx_char_add
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[a9]"></a>ble_nus_on_ble_evt</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, ble_nus.o(i.ble_nus_on_ble_evt))
+<BR><BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_dispatch
+</UL>
+
+<P><STRONG><a name="[5f]"></a>ble_nus_string_send</STRONG> (Thumb, 78 bytes, Stack size 32 bytes, ble_nus.o(i.ble_nus_string_send))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = ble_nus_string_send
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_IRQHandler
+</UL>
+
+<P><STRONG><a name="[b3]"></a>bond_data_load</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, device_manager_peripheral.o(i.bond_data_load))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = bond_data_load &rArr; pstorage_load
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_load
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_block_identifier_get
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+</UL>
+
+<P><STRONG><a name="[b6]"></a>bsp_btn_ble_init</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, bsp_btn_ble.o(i.bsp_btn_ble_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = bsp_btn_ble_init &rArr; advertising_buttons_configure &rArr; bsp_event_to_button_action_assign
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;advertising_buttons_configure
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_button_is_pressed
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[aa]"></a>bsp_btn_ble_on_ble_evt</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, bsp_btn_ble.o(i.bsp_btn_ble_on_ble_evt))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = bsp_btn_ble_on_ble_evt &rArr; advertising_buttons_configure &rArr; bsp_event_to_button_action_assign
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;advertising_buttons_configure
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_event_to_button_action_assign
+</UL>
+<BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_dispatch
+</UL>
+
+<P><STRONG><a name="[b8]"></a>bsp_btn_ble_sleep_mode_prepare</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, bsp_btn_ble.o(i.bsp_btn_ble_sleep_mode_prepare))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = bsp_btn_ble_sleep_mode_prepare &rArr; bsp_wakeup_buttons_set
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_wakeup_buttons_set
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sleep_mode_enter
+</UL>
+
+<P><STRONG><a name="[b7]"></a>bsp_button_is_pressed</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, bsp.o(i.bsp_button_is_pressed))
+<BR><BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_btn_ble_init
+</UL>
+
+<P><STRONG><a name="[33]"></a>bsp_event_handler</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, main.o(i.bsp_event_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = bsp_event_handler &rArr; ble_advertising_restart_without_whitelist &rArr; ble_advertising_start &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_restart_without_whitelist
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sleep_mode_enter
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
+</UL>
+<P><STRONG><a name="[7d]"></a>bsp_event_to_button_action_assign</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, bsp.o(i.bsp_event_to_button_action_assign))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = bsp_event_to_button_action_assign
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;advertising_buttons_configure
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_init
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_btn_ble_on_ble_evt
+</UL>
+
+<P><STRONG><a name="[ab]"></a>bsp_indication_set</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, bsp.o(i.bsp_indication_set))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = bsp_indication_set &rArr; bsp_led_indication &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_led_indication
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sleep_mode_enter
+<LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_adv_evt
+<LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_dispatch
+</UL>
+
+<P><STRONG><a name="[bc]"></a>bsp_init</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, bsp.o(i.bsp_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = bsp_init &rArr; app_button_init &rArr; nrf_drv_gpiote_in_init &rArr; channel_port_alloc
+</UL>
+<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_button_init
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_button_enable
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_event_to_button_action_assign
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_create
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[b9]"></a>bsp_wakeup_buttons_set</STRONG> (Thumb, 50 bytes, Stack size 20 bytes, bsp.o(i.bsp_wakeup_buttons_set))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = bsp_wakeup_buttons_set
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_btn_ble_sleep_mode_prepare
+</UL>
+
+<P><STRONG><a name="[a8]"></a>dm_ble_evt_handler</STRONG> (Thumb, 1642 bytes, Stack size 88 bytes, device_manager_peripheral.o(i.dm_ble_evt_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = dm_ble_evt_handler &rArr; device_instance_free &rArr; pstorage_clear &rArr; cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_evt_notify
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_trace_dump
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_handle_initialize
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bond_data_load
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;peer_instance_init
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_free
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_find
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_allocate
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_context_store
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connection_instance_init
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connection_instance_find
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connection_instance_allocate
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_dispatch
+</UL>
+
+<P><STRONG><a name="[d7]"></a>dm_handle_initialize</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, device_manager_peripheral.o(i.dm_handle_initialize))
+<BR><BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_pstorage_cb_handler
+</UL>
+
+<P><STRONG><a name="[d5]"></a>dm_init</STRONG> (Thumb, 296 bytes, Stack size 48 bytes, device_manager_peripheral.o(i.dm_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = dm_init &rArr; pstorage_clear &rArr; cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_register
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_load
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_clear
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_block_identifier_get
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;peer_instance_init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connection_instance_init
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_manager_init
+</UL>
+
+<P><STRONG><a name="[d6]"></a>dm_register</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, device_manager_peripheral.o(i.dm_register))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = dm_register &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_manager_init
+</UL>
+
+<P><STRONG><a name="[22]"></a>fputc</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, retarget.o(i.fputc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = fputc &rArr; app_uart_put &rArr; on_uart_event &rArr; action_tx_send &rArr; action_tx_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_put
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> printf8.o(i.__0printf$8)
+</UL>
+<P><STRONG><a name="[6a]"></a>intern_softdevice_events_execute</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, softdevice_handler.o(i.intern_softdevice_events_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = intern_softdevice_events_execute
+</UL>
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI2_IRQHandler
+</UL>
+
+<P><STRONG><a name="[1f]"></a>main</STRONG> (Thumb, 430 bytes, Stack size 88 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 336<LI>Call Chain = main &rArr; ble_advertising_start &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_init
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_btn_ble_init
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_nus_init
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_conn_params_init
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_init
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_trace_init
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_start
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_init
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_create
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_manager_init
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
+</UL>
+<P><STRONG><a name="[e6]"></a>nrf_drv_common_irq_enable</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, nrf_drv_common.o(i.nrf_drv_common_irq_enable))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = nrf_drv_common_irq_enable
+</UL>
+<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_init
+</UL>
+
+<P><STRONG><a name="[7f]"></a>nrf_drv_gpiote_in_event_enable</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_event_enable))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = nrf_drv_gpiote_in_event_enable
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pin_in_use_by_te
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pin_in_use_by_port
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg_sense_set
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_port_get
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_button_enable
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+</UL>
+
+<P><STRONG><a name="[83]"></a>nrf_drv_gpiote_in_init</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = nrf_drv_gpiote_in_init &rArr; channel_port_alloc
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_port_alloc
+</UL>
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_button_init
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+</UL>
+
+<P><STRONG><a name="[96]"></a>nrf_drv_gpiote_in_is_set</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_is_set))
+<BR><BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpiote_event_handler
+<LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;detection_delay_timeout_handler
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+<LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpiote_uart_event_handler
+</UL>
+
+<P><STRONG><a name="[82]"></a>nrf_drv_gpiote_init</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, nrf_drv_gpiote.o(i.nrf_drv_gpiote_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = nrf_drv_gpiote_init &rArr; nrf_drv_common_irq_enable
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_free
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_common_irq_enable
+</UL>
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_button_init
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+</UL>
+
+<P><STRONG><a name="[81]"></a>nrf_drv_gpiote_is_init</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, nrf_drv_gpiote.o(i.nrf_drv_gpiote_is_init))
+<BR><BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_button_init
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+</UL>
+
+<P><STRONG><a name="[95]"></a>nrf_drv_gpiote_out_init</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, nrf_drv_gpiote.o(i.nrf_drv_gpiote_out_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = nrf_drv_gpiote_out_init &rArr; channel_port_alloc
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;channel_port_alloc
+</UL>
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+</UL>
+
+<P><STRONG><a name="[35]"></a>nus_data_handler</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, main.o(i.nus_data_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = nus_data_handler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
+</UL>
+<P><STRONG><a name="[a1]"></a>pstorage_access_status_get</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, pstorage.o(i.pstorage_access_status_get))
+<BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+</UL>
+
+<P><STRONG><a name="[b4]"></a>pstorage_block_identifier_get</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, pstorage.o(i.pstorage_block_identifier_get))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = pstorage_block_identifier_get
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_init
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bond_data_load
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_pstorage_cb_handler
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_free
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_context_store
+</UL>
+
+<P><STRONG><a name="[d1]"></a>pstorage_clear</STRONG> (Thumb, 160 bytes, Stack size 32 bytes, pstorage.o(i.pstorage_clear))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = pstorage_clear &rArr; cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_word_aligned
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_queue_enqueue
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_init
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_free
+</UL>
+
+<P><STRONG><a name="[d4]"></a>pstorage_init</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, pstorage.o(i.pstorage_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = pstorage_init &rArr; pstorage_flash_page_end &rArr; __aeabi_uidivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_end
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_queue_element_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_manager_init
+</UL>
+
+<P><STRONG><a name="[b5]"></a>pstorage_load</STRONG> (Thumb, 162 bytes, Stack size 40 bytes, pstorage.o(i.pstorage_load))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = pstorage_load
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_word_aligned
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_init
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bond_data_load
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_load
+</UL>
+
+<P><STRONG><a name="[d8]"></a>pstorage_register</STRONG> (Thumb, 170 bytes, Stack size 24 bytes, pstorage.o(i.pstorage_register))
+<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = pstorage_register &rArr; __aeabi_idivmod &rArr; __aeabi_uidivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_end
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_init
+</UL>
+
+<P><STRONG><a name="[2f]"></a>pstorage_store</STRONG> (Thumb, 138 bytes, Stack size 24 bytes, pstorage.o(i.pstorage_store))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = pstorage_store &rArr; cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_word_aligned
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_queue_enqueue
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> device_manager_peripheral.o(i.device_context_store)
+<LI> device_manager_peripheral.o(i.gatts_context_store)
+</UL>
+<P><STRONG><a name="[ea]"></a>pstorage_sys_event_handler</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, pstorage.o(i.pstorage_sys_event_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = pstorage_sys_event_handler &rArr; flash_operation_success_run &rArr; clear_post_processing_run &rArr; command_end_procedure_run &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_state_change
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_operation_success_run
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_notify_error_state_transit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_evt_dispatch
+</UL>
+
+<P><STRONG><a name="[2e]"></a>pstorage_update</STRONG> (Thumb, 138 bytes, Stack size 24 bytes, pstorage.o(i.pstorage_update))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = pstorage_update &rArr; cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_word_aligned
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_queue_enqueue
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> device_manager_peripheral.o(i.device_context_store)
+<LI> device_manager_peripheral.o(i.gatts_context_store)
+</UL>
+<P><STRONG><a name="[38]"></a>softdevice_assertion_handler</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, softdevice_handler.o(i.softdevice_assertion_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = softdevice_assertion_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> softdevice_handler.o(i.softdevice_handler_init)
+</UL>
+<P><STRONG><a name="[b1]"></a>softdevice_ble_evt_handler_set</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, softdevice_handler.o(i.softdevice_ble_evt_handler_set))
+<BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
+</UL>
+
+<P><STRONG><a name="[b0]"></a>softdevice_handler_init</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, softdevice_handler.o(i.softdevice_handler_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = softdevice_handler_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
+</UL>
+
+<P><STRONG><a name="[b2]"></a>softdevice_sys_evt_handler_set</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, softdevice_handler.o(i.softdevice_sys_evt_handler_set))
+<BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
+</UL>
+
+<P><STRONG><a name="[25]"></a>uart_error_handle</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, app_trace.o(i.uart_error_handle))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = uart_error_handle
+</UL>
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> app_trace.o(i.app_trace_init)
+</UL>
+<P><STRONG><a name="[5d]"></a>write_adc_result_to_leds</STRONG> (Thumb, 60 bytes, Stack size 12 bytes, main.o(i.write_adc_result_to_leds))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = write_adc_result_to_leds
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_IRQHandler
+</UL>
+<P>
+<H3>
+Local Symbols
+</H3>
+<P><STRONG><a name="[32]"></a>adc_sampling_timeout_handler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(i.adc_sampling_timeout_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = adc_sampling_timeout_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
+</UL>
+<P><STRONG><a name="[28]"></a>ble_evt_dispatch</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, main.o(i.ble_evt_dispatch))
+<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = ble_evt_dispatch &rArr; dm_ble_evt_handler &rArr; device_instance_free &rArr; pstorage_clear &rArr; cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_indication_set
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_btn_ble_on_ble_evt
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_nus_on_ble_evt
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_conn_params_on_ble_evt
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_on_ble_evt
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.ble_stack_init)
+</UL>
+<P><STRONG><a name="[af]"></a>ble_stack_init</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, main.o(i.ble_stack_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = ble_stack_init &rArr; softdevice_handler_init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;softdevice_sys_evt_handler_set
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;softdevice_handler_init
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;softdevice_ble_evt_handler_set
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[37]"></a>conn_params_error_handler</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, main.o(i.conn_params_error_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = conn_params_error_handler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
+</UL>
+<P><STRONG><a name="[30]"></a>device_manager_evt_handler</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, main.o(i.device_manager_evt_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = device_manager_evt_handler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.device_manager_init)
+</UL>
+<P><STRONG><a name="[d3]"></a>device_manager_init</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, main.o(i.device_manager_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = device_manager_init &rArr; dm_init &rArr; pstorage_clear &rArr; cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_init
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_register
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_init
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[34]"></a>on_adv_evt</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, main.o(i.on_adv_evt))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = on_adv_evt &rArr; sleep_mode_enter &rArr; bsp_indication_set &rArr; bsp_led_indication &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_indication_set
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sleep_mode_enter
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
+</UL>
+<P><STRONG><a name="[36]"></a>on_conn_params_evt</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, main.o(i.on_conn_params_evt))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = on_conn_params_evt
+</UL>
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
+</UL>
+<P><STRONG><a name="[ba]"></a>sleep_mode_enter</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, main.o(i.sleep_mode_enter))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = sleep_mode_enter &rArr; bsp_indication_set &rArr; bsp_led_indication &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_indication_set
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_btn_ble_sleep_mode_prepare
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_event_handler
+<LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_adv_evt
+</UL>
+
+<P><STRONG><a name="[29]"></a>sys_evt_dispatch</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, main.o(i.sys_evt_dispatch))
+<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = sys_evt_dispatch &rArr; ble_advertising_on_sys_evt &rArr; ble_advertising_start &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_sys_event_handler
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_on_sys_evt
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.ble_stack_init)
+</UL>
+<P><STRONG><a name="[2c]"></a>alert_timer_handler</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, bsp.o(i.alert_timer_handler))
+<BR>[Address Reference Count : 1]<UL><LI> bsp.o(i.bsp_init)
+</UL>
+<P><STRONG><a name="[39]"></a>bsp_button_event_handler</STRONG> (Thumb, 144 bytes, Stack size 24 bytes, bsp.o(i.bsp_button_event_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = bsp_button_event_handler &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_stop
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_start
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button_timer_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> bsp.o(.constdata)
+</UL>
+<P><STRONG><a name="[bb]"></a>bsp_led_indication</STRONG> (Thumb, 482 bytes, Stack size 32 bytes, bsp.o(i.bsp_led_indication))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = bsp_led_indication &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_stop
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_start
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;leds_timer_handler
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_indication_set
+</UL>
+
+<P><STRONG><a name="[2a]"></a>button_timer_handler</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, bsp.o(i.button_timer_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = button_timer_handler &rArr; bsp_button_event_handler &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_button_event_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> bsp.o(i.bsp_init)
+</UL>
+<P><STRONG><a name="[2b]"></a>leds_timer_handler</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, bsp.o(i.leds_timer_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = leds_timer_handler &rArr; bsp_led_indication &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_led_indication
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> bsp.o(i.bsp_init)
+</UL>
+<P><STRONG><a name="[7c]"></a>advertising_buttons_configure</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, bsp_btn_ble.o(i.advertising_buttons_configure))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = advertising_buttons_configure &rArr; bsp_event_to_button_action_assign
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_event_to_button_action_assign
+</UL>
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_btn_ble_on_ble_evt
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_btn_ble_init
+</UL>
+
+<P><STRONG><a name="[6b]"></a>is_manual_peripheral_setup_needed</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, system_nrf51.o(i.is_manual_peripheral_setup_needed))
+<BR><BR>[Called By]<UL><LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+</UL>
+
+<P><STRONG><a name="[75]"></a>adv_data_encode</STRONG> (Thumb, 330 bytes, Stack size 40 bytes, ble_advdata.o(i.adv_data_encode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uuid_list_encode
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uint16_encode
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;service_data_encode
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;name_encode
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;manuf_specific_data_encode
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;conn_int_encode
+</UL>
+<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advdata_set
+</UL>
+
+<P><STRONG><a name="[79]"></a>conn_int_encode</STRONG> (Thumb, 126 bytes, Stack size 24 bytes, ble_advdata.o(i.conn_int_encode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = conn_int_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uint16_encode
+</UL>
+<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_encode
+</UL>
+
+<P><STRONG><a name="[7a]"></a>manuf_specific_data_encode</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, ble_advdata.o(i.manuf_specific_data_encode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = manuf_specific_data_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uint16_encode
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_encode
+</UL>
+
+<P><STRONG><a name="[76]"></a>name_encode</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, ble_advdata.o(i.name_encode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = name_encode
+</UL>
+<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_encode
+</UL>
+
+<P><STRONG><a name="[7b]"></a>service_data_encode</STRONG> (Thumb, 124 bytes, Stack size 40 bytes, ble_advdata.o(i.service_data_encode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = service_data_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uint16_encode
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_encode
+</UL>
+
+<P><STRONG><a name="[77]"></a>uint16_encode</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, ble_advdata.o(i.uint16_encode))
+<BR><BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;service_data_encode
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;manuf_specific_data_encode
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;conn_int_encode
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_encode
+</UL>
+
+<P><STRONG><a name="[78]"></a>uuid_list_encode</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, ble_advdata.o(i.uuid_list_encode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = uuid_list_encode &rArr; uuid_list_sized_encode
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uuid_list_sized_encode
+</UL>
+<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_encode
+</UL>
+
+<P><STRONG><a name="[ec]"></a>uuid_list_sized_encode</STRONG> (Thumb, 162 bytes, Stack size 48 bytes, ble_advdata.o(i.uuid_list_sized_encode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = uuid_list_sized_encode
+</UL>
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uuid_list_encode
+</UL>
+
+<P><STRONG><a name="[9b]"></a>ble_advertising_peer_address_clear</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, ble_advertising.o(i.ble_advertising_peer_address_clear))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = ble_advertising_peer_address_clear
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_init
+</UL>
+
+<P><STRONG><a name="[a2]"></a>peer_address_exists</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, ble_advertising.o(i.peer_address_exists))
+<BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+</UL>
+
+<P><STRONG><a name="[a3]"></a>whitelist_has_entries</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, ble_advertising.o(i.whitelist_has_entries))
+<BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_advertising_start
+</UL>
+
+<P><STRONG><a name="[a7]"></a>conn_params_negotiation</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, ble_conn_params.o(i.conn_params_negotiation))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = conn_params_negotiation &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_conn_params_ok
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_start
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_conn_params_on_ble_evt
+</UL>
+
+<P><STRONG><a name="[c5]"></a>is_conn_params_ok</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, ble_conn_params.o(i.is_conn_params_ok))
+<BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;conn_params_negotiation
+</UL>
+
+<P><STRONG><a name="[27]"></a>update_timeout_handler</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, ble_conn_params.o(i.update_timeout_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = update_timeout_handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> ble_conn_params.o(i.ble_conn_params_init)
+</UL>
+<P><STRONG><a name="[85]"></a>app_evt_notify</STRONG> (Thumb, 30 bytes, Stack size 24 bytes, device_manager_peripheral.o(i.app_evt_notify))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = app_evt_notify &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_pstorage_cb_handler
+</UL>
+
+<P><STRONG><a name="[c6]"></a>connection_instance_allocate</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, device_manager_peripheral.o(i.connection_instance_allocate))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = connection_instance_allocate &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connection_instance_find
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+</UL>
+
+<P><STRONG><a name="[c7]"></a>connection_instance_find</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, device_manager_peripheral.o(i.connection_instance_find))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = connection_instance_find
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connection_instance_allocate
+</UL>
+
+<P><STRONG><a name="[c8]"></a>connection_instance_init</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, device_manager_peripheral.o(i.connection_instance_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = connection_instance_init &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_init
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+</UL>
+
+<P><STRONG><a name="[cc]"></a>device_context_store</STRONG> (Thumb, 218 bytes, Stack size 32 bytes, device_manager_peripheral.o(i.device_context_store))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = device_context_store &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_block_identifier_get
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+</UL>
+
+<P><STRONG><a name="[cd]"></a>device_instance_allocate</STRONG> (Thumb, 122 bytes, Stack size 40 bytes, device_manager_peripheral.o(i.device_instance_allocate))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = device_instance_allocate &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+</UL>
+
+<P><STRONG><a name="[ce]"></a>device_instance_find</STRONG> (Thumb, 136 bytes, Stack size 48 bytes, device_manager_peripheral.o(i.device_instance_find))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = device_instance_find &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+</UL>
+
+<P><STRONG><a name="[d0]"></a>device_instance_free</STRONG> (Thumb, 48 bytes, Stack size 24 bytes, device_manager_peripheral.o(i.device_instance_free))
+<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = device_instance_free &rArr; pstorage_clear &rArr; cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_clear
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_block_identifier_get
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;peer_instance_init
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+</UL>
+
+<P><STRONG><a name="[31]"></a>dm_pstorage_cb_handler</STRONG> (Thumb, 446 bytes, Stack size 104 bytes, device_manager_peripheral.o(i.dm_pstorage_cb_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = dm_pstorage_cb_handler &rArr; app_evt_notify &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_evt_notify
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_block_identifier_get
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_handle_initialize
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_status_bit_reset
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(i.dm_init)
+</UL>
+<P><STRONG><a name="[44]"></a>gattc_context_apply</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, device_manager_peripheral.o(i.gattc_context_apply))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = gattc_context_apply &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattsc_context_apply
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[40]"></a>gattc_context_load</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, device_manager_peripheral.o(i.gattc_context_load))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = gattc_context_load &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattsc_context_load
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[3c]"></a>gattc_context_store</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, device_manager_peripheral.o(i.gattc_context_store))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = gattc_context_store &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattsc_context_store
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[43]"></a>gatts_context_apply</STRONG> (Thumb, 226 bytes, Stack size 32 bytes, device_manager_peripheral.o(i.gatts_context_apply))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = gatts_context_apply &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattsc_context_apply
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[3f]"></a>gatts_context_load</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, device_manager_peripheral.o(i.gatts_context_load))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = gatts_context_load &rArr; pstorage_load
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_load
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_trace_dump
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattsc_context_load
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[3b]"></a>gatts_context_store</STRONG> (Thumb, 250 bytes, Stack size 64 bytes, device_manager_peripheral.o(i.gatts_context_store))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = gatts_context_store &rArr; app_trace_dump &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_trace_dump
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattsc_context_store
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[45]"></a>gattsc_context_apply</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, device_manager_peripheral.o(i.gattsc_context_apply))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = gattsc_context_apply &rArr; gatts_context_apply &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_apply
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_context_apply
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[41]"></a>gattsc_context_load</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, device_manager_peripheral.o(i.gattsc_context_load))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = gattsc_context_load &rArr; gatts_context_load &rArr; pstorage_load
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_load
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_context_load
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[3d]"></a>gattsc_context_store</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, device_manager_peripheral.o(i.gattsc_context_store))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = gattsc_context_store &rArr; gatts_context_store &rArr; app_trace_dump &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatts_context_store
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_context_store
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[42]"></a>no_service_context_apply</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, device_manager_peripheral.o(i.no_service_context_apply))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = no_service_context_apply &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[3e]"></a>no_service_context_load</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, device_manager_peripheral.o(i.no_service_context_load))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = no_service_context_load &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[3a]"></a>no_service_context_store</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, device_manager_peripheral.o(i.no_service_context_store))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = no_service_context_store &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(.constdata)
+</UL>
+<P><STRONG><a name="[d2]"></a>peer_instance_init</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, device_manager_peripheral.o(i.peer_instance_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = peer_instance_init &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_status_bit_reset
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_init
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_ble_evt_handler
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;device_instance_free
+</UL>
+
+<P><STRONG><a name="[2d]"></a>storage_operation_dummy_handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, device_manager_peripheral.o(i.storage_operation_dummy_handler))
+<BR>[Address Reference Count : 1]<UL><LI> device_manager_peripheral.o(i.device_context_store)
+</UL>
+<P><STRONG><a name="[d9]"></a>update_status_bit_reset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, device_manager_peripheral.o(i.update_status_bit_reset))
+<BR><BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;peer_instance_init
+<LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm_pstorage_cb_handler
+</UL>
+
+<P><STRONG><a name="[ad]"></a>rx_char_add</STRONG> (Thumb, 158 bytes, Stack size 80 bytes, ble_nus.o(i.rx_char_add))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = rx_char_add
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_nus_init
+</UL>
+
+<P><STRONG><a name="[ae]"></a>tx_char_add</STRONG> (Thumb, 128 bytes, Stack size 72 bytes, ble_nus.o(i.tx_char_add))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = tx_char_add
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_nus_init
+</UL>
+
+<P><STRONG><a name="[e5]"></a>channel_free</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, nrf_drv_gpiote.o(i.channel_free))
+<BR><BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_init
+</UL>
+
+<P><STRONG><a name="[e4]"></a>channel_port_alloc</STRONG> (Thumb, 66 bytes, Stack size 20 bytes, nrf_drv_gpiote.o(i.channel_port_alloc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = channel_port_alloc
+</UL>
+<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_out_init
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_init
+</UL>
+
+<P><STRONG><a name="[61]"></a>channel_port_get</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrf_drv_gpiote.o(i.channel_port_get))
+<BR><BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_event_enable
+<LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTE_IRQHandler
+</UL>
+
+<P><STRONG><a name="[62]"></a>nrf_gpio_cfg_sense_set</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, nrf_drv_gpiote.o(i.nrf_gpio_cfg_sense_set))
+<BR><BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_event_enable
+<LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTE_IRQHandler
+</UL>
+
+<P><STRONG><a name="[60]"></a>nrf_gpiote_event_is_set</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, nrf_drv_gpiote.o(i.nrf_gpiote_event_is_set))
+<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOTE_IRQHandler
+</UL>
+
+<P><STRONG><a name="[e2]"></a>pin_in_use_by_port</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, nrf_drv_gpiote.o(i.pin_in_use_by_port))
+<BR><BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_event_enable
+</UL>
+
+<P><STRONG><a name="[e3]"></a>pin_in_use_by_te</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, nrf_drv_gpiote.o(i.pin_in_use_by_te))
+<BR><BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_event_enable
+</UL>
+
+<P><STRONG><a name="[87]"></a>app_notify</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, pstorage.o(i.app_notify))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = app_notify
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;command_end_procedure_run
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_notify_error_state_transit
+</UL>
+
+<P><STRONG><a name="[86]"></a>app_notify_error_state_transit</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, pstorage.o(i.app_notify_error_state_transit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24 + In Cycle
+<LI>Call Chain = app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_notify
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_sys_event_handler
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_api_err_code_process
+</UL>
+
+<P><STRONG><a name="[be]"></a>clear_operation_execute</STRONG> (Thumb, 252 bytes, Stack size 24 bytes, pstorage.o(i.clear_operation_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_process
+</UL>
+
+<P><STRONG><a name="[c0]"></a>clear_post_processing_run</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, pstorage.o(i.clear_post_processing_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = clear_post_processing_run &rArr; command_end_procedure_run &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;command_end_procedure_run
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tail_restore_state_run
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;head_restore_state_run
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_operation_success_run
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_page_erase_state_run
+</UL>
+
+<P><STRONG><a name="[c2]"></a>cmd_process</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, pstorage.o(i.cmd_process))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_operation_execute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_queue_enqueue
+</UL>
+
+<P><STRONG><a name="[c4]"></a>cmd_queue_element_init</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, pstorage.o(i.cmd_queue_element_init))
+<BR><BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_init
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;command_end_procedure_run
+</UL>
+
+<P><STRONG><a name="[c3]"></a>cmd_queue_enqueue</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, pstorage.o(i.cmd_queue_enqueue))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = cmd_queue_enqueue &rArr; cmd_process &rArr; clear_operation_execute &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_process
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_update
+<LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_store
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_clear
+</UL>
+
+<P><STRONG><a name="[c1]"></a>command_end_procedure_run</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, pstorage.o(i.command_end_procedure_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = command_end_procedure_run &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_queue_element_init
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_notify
+</UL>
+<BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_operation_success_run
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_post_processing_run
+</UL>
+
+<P><STRONG><a name="[4d]"></a>data_page_erase_state_run</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, pstorage.o(i.data_page_erase_state_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = data_page_erase_state_run &rArr; clear_post_processing_run &rArr; command_end_procedure_run &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_state_change
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_err_busy_process
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_page_erase_required
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_post_processing_run
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[4c]"></a>data_to_swap_write_state_run</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, pstorage.o(i.data_to_swap_write_state_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = data_to_swap_write_state_run &rArr; swap_sub_state_err_busy_process
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_state_change
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_err_busy_process
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[da]"></a>flash_api_err_code_process</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, pstorage.o(i.flash_api_err_code_process))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = flash_api_err_code_process &rArr; app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_notify_error_state_transit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_write
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_page_erase
+</UL>
+
+<P><STRONG><a name="[db]"></a>flash_operation_success_run</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, pstorage.o(i.flash_operation_success_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = flash_operation_success_run &rArr; clear_post_processing_run &rArr; command_end_procedure_run &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;store_cmd_flash_write_execute
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_state_err_busy_process
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_page_erase_required
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;command_end_procedure_run
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_post_processing_run
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_sys_event_handler
+</UL>
+
+<P><STRONG><a name="[de]"></a>flash_page_erase</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, pstorage.o(i.flash_page_erase))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = flash_page_erase &rArr; flash_api_err_code_process &rArr; app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_api_err_code_process
+</UL>
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_swap_erase_entry_run
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_erase_data_page_entry_run
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+</UL>
+
+<P><STRONG><a name="[df]"></a>flash_write</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, pstorage.o(i.flash_write))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = flash_write &rArr; flash_api_err_code_process &rArr; app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_api_err_code_process
+</UL>
+<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;store_cmd_flash_write_execute
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_write_data_swap_entry_run
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_restore_tail_entry_run
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_restore_head_entry_run
+</UL>
+
+<P><STRONG><a name="[4f]"></a>head_restore_state_run</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, pstorage.o(i.head_restore_state_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = head_restore_state_run &rArr; clear_post_processing_run &rArr; command_end_procedure_run &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_state_change
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_err_busy_process
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_page_erase_required
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_post_processing_run
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[c9]"></a>is_page_erase_required</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, pstorage.o(i.is_page_erase_required))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = is_page_erase_required &rArr; __aeabi_uidivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;head_restore_state_run
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_operation_success_run
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_page_erase_state_run
+</UL>
+
+<P><STRONG><a name="[e8]"></a>is_word_aligned</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, pstorage.o(i.is_word_aligned))
+<BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_update
+<LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_store
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_load
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_clear
+</UL>
+
+<P><STRONG><a name="[dd]"></a>main_state_err_busy_process</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, pstorage.o(i.main_state_err_busy_process))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = main_state_err_busy_process &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+</UL>
+<BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_operation_success_run
+</UL>
+
+<P><STRONG><a name="[e9]"></a>pstorage_flash_page_end</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, pstorage.o(i.pstorage_flash_page_end))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = pstorage_flash_page_end &rArr; __aeabi_uidivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_init
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_write_data_swap_entry_run
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_swap_erase_entry_run
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_restore_tail_entry_run
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_restore_head_entry_run
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_register
+</UL>
+
+<P><STRONG><a name="[bf]"></a>pstorage_flash_page_size</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, pstorage.o(i.pstorage_flash_page_size))
+<BR><BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_init
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;store_cmd_flash_write_execute
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_write_data_swap_entry_run
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_swap_erase_entry_run
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_restore_tail_entry_run
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_restore_head_entry_run
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_data_erase_swap_entry_run
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_end
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_page_erase_required
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;head_restore_state_run
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_operation_execute
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_register
+</UL>
+
+<P><STRONG><a name="[88]"></a>sm_state_change</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, pstorage.o(i.sm_state_change))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64 + In Cycle
+<LI>Call Chain = sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;store_cmd_flash_write_execute
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_data_erase_swap_entry_run
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_page_erase
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_process
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_sys_event_handler
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_state_err_busy_process
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_operation_success_run
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;command_end_procedure_run
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_process
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_post_processing_run
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_operation_execute
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_notify_error_state_transit
+</UL>
+
+<P><STRONG><a name="[eb]"></a>state_data_erase_swap_entry_run</STRONG> (Thumb, 92 bytes, Stack size 24 bytes, pstorage.o(i.state_data_erase_swap_entry_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = state_data_erase_swap_entry_run &rArr; __aeabi_uidivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_state_change
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+</UL>
+
+<P><STRONG><a name="[48]"></a>state_erase_data_page_entry_run</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, pstorage.o(i.state_erase_data_page_entry_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = state_erase_data_page_entry_run &rArr; flash_page_erase &rArr; flash_api_err_code_process &rArr; app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_page_erase
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[4a]"></a>state_restore_head_entry_run</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, pstorage.o(i.state_restore_head_entry_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = state_restore_head_entry_run &rArr; flash_write &rArr; flash_api_err_code_process &rArr; app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_end
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_write
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[49]"></a>state_restore_tail_entry_run</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, pstorage.o(i.state_restore_tail_entry_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = state_restore_tail_entry_run &rArr; flash_write &rArr; flash_api_err_code_process &rArr; app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_end
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_write
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[46]"></a>state_swap_erase_entry_run</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, pstorage.o(i.state_swap_erase_entry_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = state_swap_erase_entry_run &rArr; flash_page_erase &rArr; flash_api_err_code_process &rArr; app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_end
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_page_erase
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[47]"></a>state_write_data_swap_entry_run</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, pstorage.o(i.state_write_data_swap_entry_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = state_write_data_swap_entry_run &rArr; flash_write &rArr; flash_api_err_code_process &rArr; app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_end
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_write
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[dc]"></a>store_cmd_flash_write_execute</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, pstorage.o(i.store_cmd_flash_write_execute))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = store_cmd_flash_write_execute &rArr; flash_write &rArr; flash_api_err_code_process &rArr; app_notify_error_state_transit &rArr;  sm_state_change (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_flash_page_size
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_write
+</UL>
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sm_state_change
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_operation_success_run
+</UL>
+
+<P><STRONG><a name="[4b]"></a>swap_erase_state_run</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, pstorage.o(i.swap_erase_state_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = swap_erase_state_run &rArr; swap_sub_state_err_busy_process
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_state_change
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_err_busy_process
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[cb]"></a>swap_sub_state_err_busy_process</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, pstorage.o(i.swap_sub_state_err_busy_process))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = swap_sub_state_err_busy_process
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_state_change
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tail_restore_state_run
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_erase_state_run
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;head_restore_state_run
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_to_swap_write_state_run
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_page_erase_state_run
+</UL>
+
+<P><STRONG><a name="[ca]"></a>swap_sub_state_state_change</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, pstorage.o(i.swap_sub_state_state_change))
+<BR><BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pstorage_sys_event_handler
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_err_busy_process
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_erase_state_run
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_data_erase_swap_entry_run
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;head_restore_state_run
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_to_swap_write_state_run
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_page_erase_state_run
+</UL>
+
+<P><STRONG><a name="[4e]"></a>tail_restore_state_run</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, pstorage.o(i.tail_restore_state_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = tail_restore_state_run &rArr; clear_post_processing_run &rArr; command_end_procedure_run &rArr; sm_state_change &rArr;  cmd_process (Cycle)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swap_sub_state_err_busy_process
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_post_processing_run
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> pstorage.o(.constdata)
+</UL>
+<P><STRONG><a name="[72]"></a>action_tx_send</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, app_uart_fifo.o(i.action_tx_send))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = action_tx_send &rArr; action_tx_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_fifo_get
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;action_tx_stop
+</UL>
+<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_uart_event
+</UL>
+
+<P><STRONG><a name="[e7]"></a>action_uart_deactivate</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, app_uart_fifo.o(i.action_uart_deactivate))
+<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_uart_event
+</UL>
+
+<P><STRONG><a name="[26]"></a>gpiote_uart_event_handler</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, app_uart_fifo.o(i.gpiote_uart_event_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = gpiote_uart_event_handler &rArr; on_uart_event &rArr; action_tx_send &rArr; action_tx_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_is_set
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_uart_event
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> app_uart_fifo.o(i.app_uart_init)
+</UL>
+<P><STRONG><a name="[6d]"></a>on_uart_event</STRONG> (Thumb, 118 bytes, Stack size 8 bytes, app_uart_fifo.o(i.on_uart_event))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = on_uart_event &rArr; action_tx_send &rArr; action_tx_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;action_uart_deactivate
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;action_tx_send
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;action_tx_stop
+</UL>
+<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_put
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_uart_init
+<LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_IRQHandler
+<LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpiote_uart_event_handler
+</UL>
+
+<P><STRONG><a name="[24]"></a>detection_delay_timeout_handler</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, app_button.o(i.detection_delay_timeout_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = detection_delay_timeout_handler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_is_set
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> app_button.o(i.app_button_init)
+</UL>
+<P><STRONG><a name="[23]"></a>gpiote_event_handler</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, app_button.o(i.gpiote_event_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = gpiote_event_handler &rArr; app_timer_start
+</UL>
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_stop
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_start
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_is_set
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> app_button.o(i.app_button_init)
+</UL>
+<P><STRONG><a name="[8b]"></a>NVIC_SetPriority</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, app_timer.o(i.NVIC_SetPriority))
+<BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_init
+</UL>
+
+<P><STRONG><a name="[68]"></a>compare_reg_update</STRONG> (Thumb, 140 bytes, Stack size 24 bytes, app_timer.o(i.compare_reg_update))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = compare_reg_update &rArr; rtc1_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___11_app_timer_c_cd27f9c3__nrf_delay_us
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc1_stop
+</UL>
+<BR>[Called By]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI0_IRQHandler
+</UL>
+
+<P><STRONG><a name="[64]"></a>elapsed_ticks_acquire</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, app_timer.o(i.elapsed_ticks_acquire))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = elapsed_ticks_acquire
+</UL>
+<BR>[Called By]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI0_IRQHandler
+</UL>
+
+<P><STRONG><a name="[66]"></a>expired_timers_handler</STRONG> (Thumb, 82 bytes, Stack size 32 bytes, app_timer.o(i.expired_timers_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = expired_timers_handler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI0_IRQHandler
+</UL>
+
+<P><STRONG><a name="[65]"></a>list_deletions_handler</STRONG> (Thumb, 144 bytes, Stack size 24 bytes, app_timer.o(i.list_deletions_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = list_deletions_handler &rArr; timer_list_remove
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_remove
+</UL>
+<BR>[Called By]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI0_IRQHandler
+</UL>
+
+<P><STRONG><a name="[67]"></a>list_insertions_handler</STRONG> (Thumb, 230 bytes, Stack size 24 bytes, app_timer.o(i.list_insertions_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = list_insertions_handler &rArr; timer_list_insert
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_insert
+</UL>
+<BR>[Called By]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI0_IRQHandler
+</UL>
+
+<P><STRONG><a name="[8a]"></a>rtc1_stop</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, app_timer.o(i.rtc1_stop))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = rtc1_stop
+</UL>
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___11_app_timer_c_cd27f9c3__nrf_delay_us
+</UL>
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_init
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compare_reg_update
+</UL>
+
+<P><STRONG><a name="[8f]"></a>timer_list_handler_sched</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, app_timer.o(i.timer_list_handler_sched))
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_stop
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_start
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_timeouts_check
+</UL>
+
+<P><STRONG><a name="[e1]"></a>timer_list_insert</STRONG> (Thumb, 94 bytes, Stack size 20 bytes, app_timer.o(i.timer_list_insert))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = timer_list_insert
+</UL>
+<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;list_insertions_handler
+</UL>
+
+<P><STRONG><a name="[e0]"></a>timer_list_remove</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, app_timer.o(i.timer_list_remove))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = timer_list_remove
+</UL>
+<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;list_deletions_handler
+</UL>
+
+<P><STRONG><a name="[63]"></a>timer_timeouts_check</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, app_timer.o(i.timer_timeouts_check))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = timer_timeouts_check
+</UL>
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_handler_sched
+</UL>
+<BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC1_IRQHandler
+</UL>
+
+<P><STRONG><a name="[8d]"></a>user_id_get</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, app_timer.o(i.user_id_get))
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_stop
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_start
+</UL>
+
+<P><STRONG><a name="[8e]"></a>user_op_alloc</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, app_timer.o(i.user_op_alloc))
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_stop
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_start
+</UL>
+
+<P><STRONG><a name="[6f]"></a>_printf_core</STRONG> (Thumb, 1020 bytes, Stack size 104 bytes, printf8.o(i._printf_core), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+</UL>
+<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$8
+</UL>
+
+<P><STRONG><a name="[71]"></a>_printf_post_padding</STRONG> (Thumb, 32 bytes, Stack size 24 bytes, printf8.o(i._printf_post_padding), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
+
+<P><STRONG><a name="[70]"></a>_printf_pre_padding</STRONG> (Thumb, 44 bytes, Stack size 40 bytes, printf8.o(i._printf_pre_padding), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
+<P>
+<H3>
+Undefined Global Symbols
+</H3><HR></body></html>
