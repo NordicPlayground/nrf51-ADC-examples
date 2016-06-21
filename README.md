@@ -10,7 +10,7 @@ Requirements
 
 The project may need modifications to work with other versions or other boards. 
 
-To compile it, clone the repository in the \nRF51_SDK_9.0.0_2e23562\examples\ble_peripheral\ folder.
+To compile it, clone the repository in the \nRF51_SDK_9.0.0_2e23562\examples\ble_peripheral\ folder.  If you download the zip, place the ble_app_template__ADC_sampling__app_trace__NUS folder into the \nRF51_SDK_9.0.0_2e23562\examples\ble_peripheral\ folder.
 
 Documentation with project ble_app_template__ADC_sampling__app_trace__NUS
 -----------------
