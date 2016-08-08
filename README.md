@@ -12,7 +12,7 @@ To compile it, clone the repository in the \nRF5_SDK_11.0.0_89a8197\examples\per
 
 Documentation
 -----------------
-See documentation inside each project folder, e.g. project saadc_low_power.
+There will be further documentation available shorthly inside each project folder.
 
 About this project
 ------------------
