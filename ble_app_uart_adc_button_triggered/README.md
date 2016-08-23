@@ -1,4 +1,4 @@
-saadc_low_power example
+ble_app_uart_adc_button_triggered example
 ==================
 
  This project shows button triggered nRF51 ADC sampling
