@@ -76,8 +76,8 @@
 #define UART_TX_BUF_SIZE                1024                                         /**< UART TX buffer size. */
 #define UART_RX_BUF_SIZE                256                                         /**< UART RX buffer size. */
 
-#define APP_SCHED_MAX_EVT_SIZE					30
-#define APP_SCHED_QUEUE_SIZE						10
+#define APP_SCHED_MAX_EVT_SIZE          30
+#define APP_SCHED_QUEUE_SIZE            10
 
 #define ADC_BUFFER_SIZE 3                                /**< Size of buffer for ADC samples.  */
 static nrf_adc_value_t       adc_buffer[ADC_BUFFER_SIZE]; /**< ADC buffer. */
@@ -337,7 +337,6 @@ static void ble_evt_dispatch(ble_evt_t * p_ble_evt)
     on_ble_evt(p_ble_evt);
     ble_advertising_on_ble_evt(p_ble_evt);
     bsp_btn_ble_on_ble_evt(p_ble_evt);
-    
 }
 
 
@@ -372,16 +371,17 @@ static void ble_stack_init(void)
 
 void adc_sample(void)
 {
-		ret_code_t ret_code;
+    ret_code_t ret_code;
 	
-		ret_code = nrf_drv_adc_buffer_convert(adc_buffer, ADC_BUFFER_SIZE);   // Allocate buffer for ADC
-		APP_ERROR_CHECK(ret_code);
+    ret_code = nrf_drv_adc_buffer_convert(adc_buffer, ADC_BUFFER_SIZE);        // Allocate buffer for ADC
+    APP_ERROR_CHECK(ret_code);
 	
-		for (uint32_t i = 0; i < ADC_BUFFER_SIZE; i++)
-		{
-				printf("Start sampling ... \r\n");
-				nrf_drv_adc_sample();               // Trigger ADC conversion
-		}					
+    for (uint32_t i = 0; i < ADC_BUFFER_SIZE; i++)
+    {
+        while((NRF_ADC->BUSY & ADC_BUSY_BUSY_Msk) == ADC_BUSY_BUSY_Busy) {}    //Wait until the ADC is finished sampling
+        printf("Start sampling ... \r\n");
+        nrf_drv_adc_sample();
+    }					
 }
 
 /**@brief Function for handling events from the BSP module.
@@ -414,8 +414,8 @@ void bsp_event_handler(bsp_event_t event)
             break;
 						
         case BSP_EVENT_KEY_3:
-			      printf("\r\n    BUTTON 4 is pressed...\r\n");                              //Indicate on UART that Button 4 is pressed
-						app_sched_event_put(0,0,(app_sched_event_handler_t)adc_sample);    //Put adc_sample function into the scheduler queue, which will then be executed in the main context (lowest priority) when app_sched_execute is called in the main loop
+            printf("\r\n    BUTTON 4 is pressed...\r\n");                              //Indicate on UART that Button 4 is pressed
+            app_sched_event_put(0,0,(app_sched_event_handler_t)adc_sample);    //Put adc_sample function into the scheduler queue, which will then be executed in the main context (lowest priority) when app_sched_execute is called in the main loop
             break;						
 
         default:
@@ -553,23 +553,24 @@ static void buttons_leds_init(bool * p_erase_bonds)
  */
 static void adc_event_handler(nrf_drv_adc_evt_t const * p_event)
 {
-		uint8_t adc_result[ADC_BUFFER_SIZE*2];	
+    uint8_t adc_result[ADC_BUFFER_SIZE*2];	
 	
     if (p_event->type == NRF_DRV_ADC_EVT_DONE)
     {
-				adc_event_counter++;
-				printf("    ADC event counter: %d\r\n", adc_event_counter);
+        adc_event_counter++;
+        printf("    ADC event counter: %d\r\n", adc_event_counter);
         for (uint32_t i = 0; i < p_event->data.done.size; i++)
         {
             printf("Sample value %d: %d\r\n", i+1, p_event->data.done.p_buffer[i]);
-						adc_result[(i*2)] = p_event->data.done.p_buffer[i] >> 8;
-						adc_result[(i*2)+1] = p_event->data.done.p_buffer[i];					
+            adc_result[(i*2)] = p_event->data.done.p_buffer[i] >> 8;
+            adc_result[(i*2)+1] = p_event->data.done.p_buffer[i];					
         }
-				if(ADC_BUFFER_SIZE <= 10)
-				{
-						ble_nus_string_send(&m_nus, &adc_result[0], ADC_BUFFER_SIZE*2);
-				}					
-				LEDS_INVERT(BSP_LED_3_MASK);
+				
+        if(ADC_BUFFER_SIZE <= 10)
+        {
+            ble_nus_string_send(&m_nus, &adc_result[0], ADC_BUFFER_SIZE*2);
+        }					
+        LEDS_INVERT(BSP_LED_3_MASK);
     }
 }
 
@@ -595,8 +596,8 @@ int main(void)
     bool erase_bonds;
 
     // Initialize.
-		APP_SCHED_INIT(APP_SCHED_MAX_EVT_SIZE, APP_SCHED_QUEUE_SIZE);            //Initialize scheduler
-		APP_TIMER_INIT(APP_TIMER_PRESCALER, APP_TIMER_OP_QUEUE_SIZE, false);
+    APP_SCHED_INIT(APP_SCHED_MAX_EVT_SIZE, APP_SCHED_QUEUE_SIZE);            //Initialize scheduler
+    APP_TIMER_INIT(APP_TIMER_PRESCALER, APP_TIMER_OP_QUEUE_SIZE, false);
     uart_init();
     
     buttons_leds_init(&erase_bonds);
@@ -610,12 +611,12 @@ int main(void)
     err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
     APP_ERROR_CHECK(err_code);
     
-	  adc_config();                //Initialize ADC
+    adc_config();                //Initialize ADC
 	
     // Enter main loop.
     for (;;)
     {
-				power_manage();          // Enter sleep mode
-				app_sched_execute();     //Let scheduler execute whatever is in the scheduler queue
+        power_manage();          // Enter sleep mode
+        app_sched_execute();     //Let scheduler execute whatever is in the scheduler queue
     }
 }
