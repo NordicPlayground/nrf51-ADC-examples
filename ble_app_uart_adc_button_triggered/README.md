@@ -16,7 +16,7 @@ Documentation
 - Compatibility: nRF51 rev 3, nRF5 SDK 11.0.0
 - Softdevice used: 130 2.0.x
   
-This example is basically the ble_app_uart example in nRF5 SDK 11.0.0 with nRF51 ADC addon functionality. ADC sampling is triggered with pressing Button 4 (search for BSP_EVENT_KEY_3 in this file) on the nRF51-DK board. When Button 4 is pressed, ADC sample task is put into app_scheduler queue, which results in the adc_sample function to be executed in the main context. The ADC outputs the result on UART.
+This example is basically the ble_app_uart example in nRF5 SDK 11.0.0 with nRF51 ADC addon functionality. ADC sampling is triggered with pressing Button 4 (search for BSP_EVENT_KEY_3 in the main.c file) on the nRF51-DK board. When Button 4 is pressed, ADC sample task is put into app_scheduler queue, which results in the adc_sample function to be executed in the main context. The ADC outputs the result on UART.
 
 In this example, a single ADC channel is configured to sample on Analog Input 2, which maps to physical pin P0.01 on the nRF51 IC. Buffer size is set to 3, which makes the nrf_drv_adc driver return callback first when three samples have been triggered with three calls to nrf_drv_adc_sample function. When Button 4 is pressed once, buffer is allocated and the nrf_drv_adc_sample funciton is called three times which will output three ADC sample results on the UART. The ADC_BUFFER_SIZE constant configures the ADC buffer size. 
 
