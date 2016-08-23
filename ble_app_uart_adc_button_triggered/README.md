@@ -22,7 +22,7 @@ In this example, a single ADC channel is configured to sample on Analog Input 2,
 
 The UART output can be seen by connecting with e.g. Realterm UART terminal program for PC (when nRF51-DK connected to PC via USB) with the UART settings configured in the uart_init function, which is also described in the ble_app_uart documentation at http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v11.0.0/ble_sdk_app_nus_eval.html?cp=6_0_0_4_2_2_18_2#project_uart_nus_eval_test
   
-Indicators on the nRF52-DK board:
+Indicators on the nRF51-DK board:
 - LED1 blinking: Device advertising
 - LED1 on:	Device connected
 - LED4 toggle: ADC sampling complete and ADC buffer full
