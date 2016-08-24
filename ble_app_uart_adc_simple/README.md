@@ -26,7 +26,7 @@ The UART output can be seen by connecting with e.g. Realterm UART terminal progr
 Indicators on the nRF51-DK board:
 - LED1 blinking: Device advertising
 - LED1 on:	Device connected
-- LED2 toggle: Trigger sampling
+- LED2 toggle: Trigger ADC sampling
 - LED4 toggle: ADC sampling complete and ADC buffer full, i.e. 4 samples
 
 About this project
