@@ -523,24 +523,24 @@ static void power_manage(void)
  */
 static void adc_event_handler(nrf_drv_adc_evt_t const * p_event)
 {
-		uint8_t adc_result[ADC_BUFFER_SIZE*2];
+    uint8_t adc_result[ADC_BUFFER_SIZE*2];
 	
     if (p_event->type == NRF_DRV_ADC_EVT_DONE)
     {
-				adc_event_counter++;
-				NRF_LOG_PRINTF("  adc event counter: %d\r\n", adc_event_counter);
+        adc_event_counter++;
+        NRF_LOG_PRINTF("  adc event counter: %d\r\n", adc_event_counter);
         for (uint32_t i = 0; i < p_event->data.done.size; i++)
         {
             NRF_LOG_PRINTF("ADC value channel %d: %d\r\n", (i % number_of_adc_channels), p_event->data.done.p_buffer[i]);
-						adc_result[(i*2)] = p_event->data.done.p_buffer[i] >> 8;
-						adc_result[(i*2)+1] = p_event->data.done.p_buffer[i];
+            adc_result[(i*2)] = p_event->data.done.p_buffer[i] >> 8;
+            adc_result[(i*2)+1] = p_event->data.done.p_buffer[i];
         }
-				if(ADC_BUFFER_SIZE <= 10)
-				{
-						ble_nus_string_send(&m_nus, &adc_result[0], ADC_BUFFER_SIZE*2);
-				}	
-				APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
-				LEDS_INVERT(BSP_LED_3_MASK);
+        if(ADC_BUFFER_SIZE <= 10)
+        {
+            ble_nus_string_send(&m_nus, &adc_result[0], ADC_BUFFER_SIZE*2);
+        }	
+        APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
+        LEDS_INVERT(BSP_LED_3_MASK);
     }
 }
 
@@ -564,27 +564,27 @@ static void adc_config(void)
 {
     ret_code_t ret_code;
 	
-		//Initialize ADC
+    //Initialize ADC
     nrf_drv_adc_config_t config = NRF_DRV_ADC_DEFAULT_CONFIG;
     ret_code = nrf_drv_adc_init(&config, adc_event_handler);
     APP_ERROR_CHECK(ret_code);
 	
-		//Configure and enable ADC channel 0
-		static nrf_drv_adc_channel_t m_channel_0_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_2); 
-		m_channel_0_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
-		nrf_drv_adc_channel_enable(&m_channel_0_config);
+    //Configure and enable ADC channel 0
+    static nrf_drv_adc_channel_t m_channel_0_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_2); 
+    m_channel_0_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
+    nrf_drv_adc_channel_enable(&m_channel_0_config);
 	
-		//Configure and enable ADC channel 1
-		static nrf_drv_adc_channel_t m_channel_1_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_6); 
-		m_channel_1_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
-		nrf_drv_adc_channel_enable(&m_channel_1_config);
+    //Configure and enable ADC channel 1
+    static nrf_drv_adc_channel_t m_channel_1_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_6); 
+    m_channel_1_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
+    nrf_drv_adc_channel_enable(&m_channel_1_config);
 	
-		//Configure and enable ADC channel 2
-		static nrf_drv_adc_channel_t m_channel_2_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_7);	
-		m_channel_2_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
-		nrf_drv_adc_channel_enable(&m_channel_2_config);
+    //Configure and enable ADC channel 2
+    static nrf_drv_adc_channel_t m_channel_2_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_7);	
+    m_channel_2_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
+    nrf_drv_adc_channel_enable(&m_channel_2_config);
 	
-		number_of_adc_channels = 3;    //Set equal to the number of configured ADC channels, for the sake of UART output.
+    number_of_adc_channels = 3;    //Set equal to the number of configured ADC channels, for the sake of UART output.
 }
 
 /**
@@ -633,10 +633,10 @@ int main(void)
     advertising_init();
     conn_params_init();
 
-		adc_sampling_event_init();
+    adc_sampling_event_init();
     adc_config();
-		APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
-		adc_sampling_event_enable();
+    APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
+    adc_sampling_event_enable();
 	
     printf("\r\nUART Start - with ADC !\r\n");
     err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
