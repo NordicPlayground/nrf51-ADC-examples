@@ -19,7 +19,7 @@ Documentation
 This example is basically the ble_app_uart example in nRF5 SDK 11.0.0 with nRF51 ADC addon functionality. The example works as follows:
 - Softdevice and modules are initialized, UART is set up, adc is configured to sample on analog input pin AIN2 (P0.01). ADC buffer size is set to 4 samples.
 - ADC samples 4 times a second (see main loop). Code execution is in busy waiting loop (with calling nrf_delay_ms) while not sampling.
-- When ADC buffer is full, the nrf_drv_adc driver calls the application in function adc_event_handler and the values are printed on UART.
+- When ADC buffer is full, the nrf_drv_adc driver calls the application in function adc_event_handler and the ADC values are printed on UART.
 
 The UART output can be seen by connecting with e.g. Realterm UART terminal program for PC (when nRF51-DK connected to PC via USB) with the UART settings configured in the uart_init function, which is also described in the ble_app_uart documentation at http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v11.0.0/ble_sdk_app_nus_eval.html?cp=6_0_0_4_2_2_18_2#project_uart_nus_eval_test
   
