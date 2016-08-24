@@ -534,24 +534,24 @@ static void power_manage(void)
  */
 static void adc_event_handler(nrf_drv_adc_evt_t const * p_event)
 {
-		uint8_t adc_result[ADC_BUFFER_SIZE*2];
+    uint8_t adc_result[ADC_BUFFER_SIZE*2];
 	
     if (p_event->type == NRF_DRV_ADC_EVT_DONE)
     {
-				adc_event_counter++;
-				printf("    ADC event counter: %d\r\n", adc_event_counter);			
+        adc_event_counter++;
+        printf("    ADC event counter: %d\r\n", adc_event_counter);			
         uint32_t i;
         for (i = 0; i < p_event->data.done.size; i++)
         {
             printf("Sample value %d: %d\r\n", i+1, p_event->data.done.p_buffer[i]);   //Print ADC result on hardware UART
-						adc_result[(i*2)] = p_event->data.done.p_buffer[i] >> 8;
-						adc_result[(i*2)+1] = p_event->data.done.p_buffer[i];					
+            adc_result[(i*2)] = p_event->data.done.p_buffer[i] >> 8;
+            adc_result[(i*2)+1] = p_event->data.done.p_buffer[i];					
         }
-				if(ADC_BUFFER_SIZE <= 10)
-				{
-						ble_nus_string_send(&m_nus, &adc_result[0], ADC_BUFFER_SIZE*2);           //Send ADC result over BLE via NUS service
-				}		
-				LEDS_INVERT(BSP_LED_3_MASK);				                                          //Indicate sampling complete on LED 4
+        if(ADC_BUFFER_SIZE <= 10)
+        {
+            ble_nus_string_send(&m_nus, &adc_result[0], ADC_BUFFER_SIZE*2);           //Send ADC result over BLE via NUS service
+        }		
+        LEDS_INVERT(BSP_LED_3_MASK);				                                          //Indicate sampling complete on LED 4
     }
 }
 
@@ -596,12 +596,12 @@ int main(void)
     // Enter main loop.
     for (;;)
     {
-			  APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));   //Allocate buffer for ADC
+        APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));   //Allocate buffer for ADC
         for (uint32_t i = 0; i < ADC_BUFFER_SIZE; i++)
         {
             nrf_drv_adc_sample();           // manually trigger ADC conversion
-						power_manage();                 // CPU enter sleep mode during sampling. CPU will be enabled again when ADC interrupt occurs and adc_event_handler is called
-					  LEDS_INVERT(BSP_LED_1_MASK);    // Indicate sampling complete
+            power_manage();                 // CPU enter sleep mode during sampling. CPU will be enabled again when ADC interrupt occurs and adc_event_handler is called
+            LEDS_INVERT(BSP_LED_1_MASK);    // Indicate sampling complete
             nrf_delay_ms(250);              // Slow down sampling frequency with 250ms blocking delay
         }
     }
