@@ -12,7 +12,7 @@ To compile it, clone the repository in the \nRF5_SDK_11.0.0_89a8197\examples\per
 
 Documentation
 -----------------
-There will be further documentation available shorthly inside each project folder.
+Documentation is provided for each example inside each example project folder
 
 About this project
 ------------------
