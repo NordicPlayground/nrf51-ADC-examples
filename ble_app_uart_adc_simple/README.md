@@ -8,7 +8,7 @@ Requirements
 - nRF5 SDK version 11.0.0
 - nRF51-DK
 
-To compile it, clone the repository in the \nRF5_SDK_11.0.0_89a8197\examples\peripheral\ folder.  If you download the zip, place the ble_app_uart_adc_button_triggered folder into the \nRF5_SDK_11.0.0_89a8197\examples\peripheral\ folder.
+To compile it, clone the repository in the \nRF5_SDK_11.0.0_89a8197\examples\ble_peripheral\ folder.  If you download the zip, place the ble_app_uart_adc_button_triggered folder into the \nRF5_SDK_11.0.0_89a8197\examples\ble_peripheral\ folder.
 
 Documentation
 -----------------
