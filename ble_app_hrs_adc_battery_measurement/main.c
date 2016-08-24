@@ -149,7 +149,7 @@ static ble_dfu_t                         m_dfus;                                
 																	 
 void adc_sample(void);																	 
 																	 
-#define ADC_BUFFER_SIZE 3                                /**< Size of buffer for ADC samples.  */
+#define ADC_BUFFER_SIZE 6                                /**< Size of buffer for ADC samples.  */
 static nrf_adc_value_t       adc_buffer[ADC_BUFFER_SIZE]; /**< ADC buffer. */
 static uint8_t adc_event_counter = 0;
 
@@ -967,43 +967,42 @@ static void uart_init(void)
  */
 static void adc_event_handler(nrf_drv_adc_evt_t const * p_event)
 {
-		uint32_t err_code;
-		uint16_t adc_sum_value = 0;
-		uint16_t adc_average_value;
-		uint16_t adc_result_millivolts;
-		uint8_t  adc_result_percent;
+    uint32_t err_code;
+    uint16_t adc_sum_value = 0;
+    uint16_t adc_average_value;
+    uint16_t adc_result_millivolts;
+    uint8_t  adc_result_percent;
 
-	  sd_clock_hfclk_release();			//Release the external crystal
+    sd_clock_hfclk_release();			//Release the external crystal
 	
-		adc_event_counter++;
-		printf("    ADC event counter: %d\r\n", adc_event_counter);
+    adc_event_counter++;
+    printf("    ADC event counter: %d\r\n", adc_event_counter);
     if (p_event->type == NRF_DRV_ADC_EVT_DONE)
     {
         uint32_t i;
         for (i = 0; i < p_event->data.done.size; i++)
         {
             printf("Sample value %d: %d\r\n", i+1, p_event->data.done.p_buffer[i]);
-						adc_sum_value += p_event->data.done.p_buffer[i];
+            adc_sum_value += p_event->data.done.p_buffer[i];                           //Sum all values in ADC buffer
         }
-				adc_average_value = adc_sum_value / p_event->data.done.size;
-				printf("Average ADC value: %d\r\n", adc_average_value);
+        adc_average_value = adc_sum_value / p_event->data.done.size;                   //Calculate average value from all samples in the ADC buffer
+        printf("Average ADC value: %d\r\n", adc_average_value);
 				
-				adc_result_millivolts = ADC_RESULT_IN_MILLI_VOLTS(adc_average_value);
-				printf("ADC result in millivolts: %d\r\n", adc_result_millivolts);
+        adc_result_millivolts = ADC_RESULT_IN_MILLI_VOLTS(adc_average_value);          //Transform the average ADC value into millivolts value
+        printf("ADC result in millivolts: %d\r\n", adc_result_millivolts);
 				
-				adc_result_percent = battery_level_in_percent(adc_result_millivolts);
-				printf("ADC result in percent: %d\r\n", adc_result_percent);
+        adc_result_percent = battery_level_in_percent(adc_result_millivolts);          //Transform the millivolts value into battery level percent.
+        printf("ADC result in percent: %d\r\n", adc_result_percent);
 				
-				//Send the battery level over BLE
-				err_code = ble_bas_battery_level_update(&m_bas, adc_result_percent);
-				if ((err_code != NRF_SUCCESS) &&
-						(err_code != NRF_ERROR_INVALID_STATE) &&
-						(err_code != BLE_ERROR_NO_TX_PACKETS) &&
-						(err_code != BLE_ERROR_GATTS_SYS_ATTR_MISSING)
-						)
-				{
-						APP_ERROR_HANDLER(err_code);
-				}
+        //Send the battery level over BLE
+        err_code = ble_bas_battery_level_update(&m_bas, adc_result_percent);           //Send the battery level over BLE
+        if ((err_code != NRF_SUCCESS) &&
+            (err_code != NRF_ERROR_INVALID_STATE) &&                                   
+            (err_code != BLE_ERROR_NO_TX_PACKETS) &&                                   
+            (err_code != BLE_ERROR_GATTS_SYS_ATTR_MISSING))
+        {
+            APP_ERROR_HANDLER(err_code);                                               //Assert on error
+        }
     }
 }
 
@@ -1014,39 +1013,40 @@ static void adc_config(void)
 {
     ret_code_t ret_code;
     nrf_drv_adc_config_t adc_config = NRF_DRV_ADC_DEFAULT_CONFIG;                                              //Get default ADC configuration
-		static nrf_drv_adc_channel_t adc_channel_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_2);     //Get default ADC channel configuration
+    static nrf_drv_adc_channel_t adc_channel_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_2);     //Get default ADC channel configuration
 	
-		//Uncomment the following to sample the supply voltage of the nRF51 directly (not from a pin)
-//		adc_channel_config.config.config.input = NRF_ADC_CONFIG_SCALING_SUPPLY_ONE_THIRD;
-//		adc_channel_config.config.config.ain = NRF_ADC_CONFIG_INPUT_DISABLED;
+    //Uncomment the following two lines to sample the supply voltage of the nRF51 directly (not from a pin)
+    //adc_channel_config.config.config.input = NRF_ADC_CONFIG_SCALING_SUPPLY_ONE_THIRD;
+    //adc_channel_config.config.config.ain = NRF_ADC_CONFIG_INPUT_DISABLED;
 	
-    ret_code = nrf_drv_adc_init(&adc_config, adc_event_handler);        //Initialize the ADC
+    ret_code = nrf_drv_adc_init(&adc_config, adc_event_handler);              //Initialize the ADC
     APP_ERROR_CHECK(ret_code);
 
-    nrf_drv_adc_channel_enable(&adc_channel_config);                    //Configure and enable an ADC channel
+    nrf_drv_adc_channel_enable(&adc_channel_config);                          //Configure and enable an ADC channel
 }
 /**
  * @brief Function to trigger ADC sampling
  */
 void adc_sample(void)
 {
-		ret_code_t ret_code;
-		uint32_t p_is_running = 0;
+    ret_code_t ret_code;
+    uint32_t p_is_running = 0;
 	
-		ret_code = nrf_drv_adc_buffer_convert(adc_buffer, ADC_BUFFER_SIZE);   // Allocate buffer for ADC
-		APP_ERROR_CHECK(ret_code);
+    ret_code = nrf_drv_adc_buffer_convert(adc_buffer, ADC_BUFFER_SIZE);       // Allocate buffer for ADC
+    APP_ERROR_CHECK(ret_code);
 	
-		//Request the external high frequency crystal for best ADC accuracy. For lowest current consumption, don't request the crystal.
-		sd_clock_hfclk_request();
-	  while(! p_is_running) {  							//wait for the hfclk to be available
-		  sd_clock_hfclk_is_running((&p_is_running));
-	  }  
+    //Request the external high frequency crystal for best ADC accuracy. For lowest current consumption, don't request the crystal.
+    sd_clock_hfclk_request();
+    while(! p_is_running) {          //wait for the hfclk to be available
+        sd_clock_hfclk_is_running((&p_is_running));
+    }  
 	
-		for (uint32_t i = 0; i < ADC_BUFFER_SIZE; i++)
-		{
-				printf("Start sampling ... \r\n");
-				nrf_drv_adc_sample();               // Trigger ADC conversion
-		}					
+    for (uint32_t i = 0; i < ADC_BUFFER_SIZE; i++)
+    {
+        while((NRF_ADC->BUSY & ADC_BUSY_BUSY_Msk) == ADC_BUSY_BUSY_Busy) {}   //Wait until the ADC is finished sampling
+        printf("Start sampling ... \r\n");
+        nrf_drv_adc_sample();        // Trigger ADC conversion
+    }					
 }
 
 /**@brief Function for application main entry.
@@ -1057,8 +1057,8 @@ int main(void)
     bool erase_bonds;
 
     // Initialize.
-		uart_init();                                                             //Initialize UART
-		APP_SCHED_INIT(APP_SCHED_MAX_EVT_SIZE, APP_SCHED_QUEUE_SIZE);            //Initialize scheduler
+    uart_init();                                                     //Initialize UART
+    APP_SCHED_INIT(APP_SCHED_MAX_EVT_SIZE, APP_SCHED_QUEUE_SIZE);    //Initialize scheduler
     timers_init();
     buttons_leds_init(&erase_bonds);
     ble_stack_init();
@@ -1069,7 +1069,7 @@ int main(void)
     sensor_simulator_init();
     conn_params_init();
 	
-		adc_config();                                                            //Initialize ADC
+    adc_config();                  //Initialize ADC
 
     // Start execution.
     application_timers_start();
@@ -1080,6 +1080,6 @@ int main(void)
     for (;;)
     {
         power_manage();
-				app_sched_execute();                                                 //Let scheduler execute whatever is in the scheduler queue
+        app_sched_execute();       //Let scheduler execute whatever is in the scheduler queue
     }
 }
