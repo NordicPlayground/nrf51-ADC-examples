@@ -51,16 +51,16 @@ static void adc_event_handler(nrf_drv_adc_evt_t const * p_event)
     if (p_event->type == NRF_DRV_ADC_EVT_DONE)
     {
         uint32_t i;
-				NRF_LOG_PRINTF("  adc event counter: %d\r\n", adc_event_counter);
+        NRF_LOG_PRINTF("  adc event counter: %d\r\n", adc_event_counter);
         for (i = 0; i < p_event->data.done.size; i++)
         {
             NRF_LOG_PRINTF("ADC value channel %d: %d\r\n", (i % number_of_adc_channels), p_event->data.done.p_buffer[i]);
         }
-				adc_event_counter++;
+    adc_event_counter++;
     }
-		APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
+    APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
 
-		LEDS_INVERT(BSP_LED_0_MASK);
+    LEDS_INVERT(BSP_LED_0_MASK);
 }
 
 void timer_handler(nrf_timer_event_t event_type, void* p_context)
@@ -74,27 +74,27 @@ static void adc_config(void)
 {
     ret_code_t ret_code;
 	
-		//Initialize ADC
+    //Initialize ADC
     nrf_drv_adc_config_t config = NRF_DRV_ADC_DEFAULT_CONFIG;
     ret_code = nrf_drv_adc_init(&config, adc_event_handler);
     APP_ERROR_CHECK(ret_code);
 	
-		//Configure and enable ADC channel 0
-		static nrf_drv_adc_channel_t m_channel_0_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_2); 
-		m_channel_0_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
-		nrf_drv_adc_channel_enable(&m_channel_0_config);
+    //Configure and enable ADC channel 0
+    static nrf_drv_adc_channel_t m_channel_0_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_2); 
+    m_channel_0_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
+    nrf_drv_adc_channel_enable(&m_channel_0_config);
 	
-		//Configure and enable ADC channel 1
-		static nrf_drv_adc_channel_t m_channel_1_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_6); 
-		m_channel_1_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
-		nrf_drv_adc_channel_enable(&m_channel_1_config);
+    //Configure and enable ADC channel 1
+    static nrf_drv_adc_channel_t m_channel_1_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_6); 
+    m_channel_1_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
+    nrf_drv_adc_channel_enable(&m_channel_1_config);
 	
-		//Configure and enable ADC channel 2
-		static nrf_drv_adc_channel_t m_channel_2_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_7);	
-		m_channel_2_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
-		nrf_drv_adc_channel_enable(&m_channel_2_config);
+    //Configure and enable ADC channel 2
+    static nrf_drv_adc_channel_t m_channel_2_config = NRF_DRV_ADC_DEFAULT_CHANNEL(NRF_ADC_CONFIG_INPUT_7);	
+    m_channel_2_config.config.config.input = NRF_ADC_CONFIG_SCALING_INPUT_ONE_THIRD;
+    nrf_drv_adc_channel_enable(&m_channel_2_config);
 	
-		number_of_adc_channels = 3;    //Set equal to the number of configured ADC channels, for the sake of UART output.
+    number_of_adc_channels = 3;    //Set equal to the number of configured ADC channels, for the sake of UART output.
 }
 
 void adc_sampling_event_enable(void)
@@ -136,20 +136,20 @@ int main(void)
     LEDS_CONFIGURE(BSP_LED_0_MASK);
     LEDS_OFF(BSP_LED_0_MASK);
 
-		adc_sampling_event_init();
+    adc_sampling_event_init();
     adc_config();
-		adc_sampling_event_enable();
+    adc_sampling_event_enable();
     UNUSED_RETURN_VALUE(NRF_LOG_INIT());
 
     NRF_LOG_PRINTF("    ADC example\r\n");
 
-		APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
+    APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
 	
     while (true)
     {
-            __WFE();    
-						__SEV();
-            __WFE();
+        __WFE();    
+        __SEV();
+        __WFE();
     }
 }
 /** @} */
