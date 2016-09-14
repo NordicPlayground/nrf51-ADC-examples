@@ -1,4 +1,4 @@
-adc_timer_driven_scan_mode example
+adc_no_drivers_interrupt_driven
 ==================
 
 This project shows nRF51 ADC interrupt driven sampling without using drivers.
