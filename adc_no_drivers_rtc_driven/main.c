@@ -99,7 +99,7 @@ int main(void)
 	uint32_t err_code;
 	
 	err_code = (NRF_LOG_INIT());    //NRF_LOG documentation: http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v11.0.0/lib_nrf_log.html?cp=4_0_1_3_33
-	NRF_LOG("    ADC example - check intial sampling accuracy\r\n");
+	NRF_LOG("    ADC example - no drivers, interrupt driven\r\n");
 	
 	hfclk_config();     //Enable 16MHz crystal for maximum ADC accuracy. Comment out this line to use internal 16MHz RC instead, which saves power.
 	lfclk_config();			//Configure 32kHz clock, required by the RTC timer
