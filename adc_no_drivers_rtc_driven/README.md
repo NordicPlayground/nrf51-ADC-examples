@@ -1,4 +1,4 @@
-adc_no_drivers_interrupt_driven
+adc_no_drivers_rtc_driven
 ==================
 
 This project shows nRF51 ADC interrupt driven sampling without using drivers.
