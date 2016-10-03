@@ -16,7 +16,7 @@ Documentation
 - Compatibility: nRF51 rev 3, nRF5 SDK 11.0.0
 - Softdevice used: no softdevice
   
-This example shows a way to obtain low current consumption using the nRF51 ADC. To enabled lowest current consumption, disable UART logging (NRF_LOGGING_ENABLED) and disable HFCLK crystal while sampling (HIGH_ACCURACY_ADC_ENABLE). This example uses application timer (app_timer) and 32kHz crystal to obtain lowest current consumption.
+This example shows a way to obtain low current consumption using the nRF51 ADC. To enable lowest current consumption, disable UART logging (NRF_LOGGING_ENABLED) and disable HFCLK crystal while sampling (HIGH_ACCURACY_ADC_ENABLE). This example uses application timer (app_timer) and 32kHz crystal to obtain lowest current consumption.
 
 - Current consumption, 1Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=0: 5uA
 - Current consumption, 100Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=0: 70uA
