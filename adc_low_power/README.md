@@ -5,15 +5,15 @@ adc_low_power
  
 Requirements
 ------------
-- nRF5 SDK version 11.0.0
+- nRF5 SDK version 12.2.0
 - nRF51-DK
 
-To compile it, clone the repository in the \nRF5_SDK_11.0.0_89a8197\examples\peripheral\ folder.  If you download the zip, place the adc_low_power folder into the \nRF5_SDK_11.0.0_89a8197\examples\peripheral\ folder.
+To compile it, clone the repository in the \nRF5_SDK_12.2.0_f012efa\examples\peripheral\ folder.  If you download the zip, place the adc_low_power folder into the \nRF5_SDK_12.2.0_f012efa\examples\peripheral\ folder.
 
 Documentation
 -----------------
 - Perhipheral: nRF51 ADC
-- Compatibility: nRF51 rev 3, nRF5 SDK 11.0.0
+- Compatibility: nRF51 rev 3, nRF5 SDK 12.2.0
 - Softdevice used: no softdevice
   
 This example shows a way to obtain low current consumption using the nRF51 ADC. To enable lowest current consumption, disable UART logging (NRF_LOGGING_ENABLED) and disable HFCLK crystal while sampling (HIGH_ACCURACY_ADC_ENABLE). This example uses application timer (app_timer) and 32kHz crystal to obtain lowest current consumption.

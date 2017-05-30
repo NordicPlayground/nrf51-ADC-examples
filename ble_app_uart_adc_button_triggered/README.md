@@ -5,22 +5,22 @@ ble_app_uart_adc_button_triggered example
  
 Requirements
 ------------
-- nRF5 SDK version 11.0.0
+- nRF5 SDK version 12.2.0
 - nRF51-DK
 
-To compile it, clone the repository in the \nRF5_SDK_11.0.0_89a8197\examples\peripheral\ folder.  If you download the zip, place the ble_app_uart_adc_button_triggered folder into the \nRF5_SDK_11.0.0_89a8197\examples\peripheral\ folder.
+To compile it, clone the repository in the \nRF5_SDK_12.2.0_f012efa\examples\peripheral\ folder.  If you download the zip, place the ble_app_uart_adc_button_triggered folder into the \nRF5_SDK_12.2.0_f012efa\examples\peripheral\ folder.
 
 Documentation
 -----------------
 - Perhipheral: nRF51 ADC
-- Compatibility: nRF51 rev 3, nRF5 SDK 11.0.0
+- Compatibility: nRF51 rev 3, nRF5 SDK 12.2.0
 - Softdevice used: 130 2.0.x
   
-This example is basically the ble_app_uart example in nRF5 SDK 11.0.0 with nRF51 ADC addon functionality. ADC sampling is triggered with pressing Button 4 (search for BSP_EVENT_KEY_3 in the main.c file) on the nRF51-DK board. When Button 4 is pressed, ADC sample task is put into app_scheduler queue, which results in the adc_sample function to be executed in the main context. The ADC outputs the result on UART.
+This example is basically the ble_app_uart example in nRF5 SDK 12.2.0 with nRF51 ADC addon functionality. ADC sampling is triggered with pressing Button 4 (search for BSP_EVENT_KEY_3 in the main.c file) on the nRF51-DK board. When Button 4 is pressed, ADC sample task is put into app_scheduler queue, which results in the adc_sample function to be executed in the main context. The ADC outputs the result on UART.
 
 In this example, a single ADC channel is configured to sample on Analog Input 2, which maps to physical pin P0.01 on the nRF51 IC. Buffer size is set to 3, which makes the nrf_drv_adc driver return callback first when three samples have been triggered with three calls to nrf_drv_adc_sample function. When Button 4 is pressed once, buffer is allocated and the nrf_drv_adc_sample funciton is called three times which will output three ADC sample results on the UART. The ADC_BUFFER_SIZE constant configures the ADC buffer size. 
 
-The UART output can be seen by connecting with e.g. Realterm UART terminal program for PC (when nRF51-DK connected to PC via USB) with the UART settings configured in the uart_init function, which is also described in the ble_app_uart documentation at http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v11.0.0/ble_sdk_app_nus_eval.html?cp=6_0_0_4_2_2_18_2#project_uart_nus_eval_test
+The UART output can be seen by connecting with e.g. Realterm UART terminal program for PC (when nRF51-DK connected to PC via USB) with the UART settings configured in the uart_init function, which is also described in the ble_app_uart documentation at http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v12.2.0/ble_sdk_app_nus_eval.html?cp=4_0_2_4_2_2_18_2#project_uart_nus_eval_test
   
 Indicators on the nRF51-DK board:
 - LED1 blinking: Device advertising

@@ -18,7 +18,7 @@
  *
  * This file contains the source code for a sample application using the ADC driver.
  */
- 
+
 #include "nrf.h"
 #include <stdbool.h>
 #include <stdint.h>
@@ -26,7 +26,9 @@
 #include "nrf_drv_adc.h"
 #include "nordic_common.h"
 #include "boards.h"
+#define NRF_LOG_MODULE_NAME "APP"
 #include "nrf_log.h"
+#include "nrf_log_ctrl.h"
 #include "app_error.h"
 #include "app_util_platform.h"
 #include "nrf_ppi.h"
@@ -34,14 +36,14 @@
 #include "nrf_drv_ppi.h"
 
 
-#define ADC_BUFFER_SIZE 6                               //Size of buffer for ADC samples. Buffer size should be multiple of number of adc channels located.
-#define ADC_SAMPLE_RATE_DIVIDER				0x8000;           //Sets the sampling rate
+#define ADC_BUFFER_SIZE 6       //Size of buffer for ADC samples. Buffer size should be multiple of number of adc channels located.
+#define ADC_SAMPLE_RATE	1000     //Sets the sampling rate in ms
 
-static nrf_adc_value_t         adc_buffer[ADC_BUFFER_SIZE]; /**< ADC buffer. */
-static nrf_ppi_channel_t       m_ppi_channel;
-static const nrf_drv_timer_t   m_timer = NRF_DRV_TIMER_INSTANCE(2);
-static uint8_t adc_event_counter = 0;
-static uint8_t number_of_adc_channels;
+static nrf_adc_value_t          adc_buffer[ADC_BUFFER_SIZE]; /**< ADC buffer. */
+static nrf_ppi_channel_t        m_ppi_channel;
+static const nrf_drv_timer_t    m_timer = NRF_DRV_TIMER_INSTANCE(2);
+static uint8_t                  adc_event_counter = 0;
+static uint8_t                  number_of_adc_channels;
 
 /**
  * @brief ADC interrupt handler.
@@ -51,16 +53,16 @@ static void adc_event_handler(nrf_drv_adc_evt_t const * p_event)
     if (p_event->type == NRF_DRV_ADC_EVT_DONE)
     {
         uint32_t i;
-        NRF_LOG_PRINTF("  adc event counter: %d\r\n", adc_event_counter);
+        NRF_LOG_INFO("  adc event counter: %d\r\n", adc_event_counter);
         for (i = 0; i < p_event->data.done.size; i++)
         {
-            NRF_LOG_PRINTF("ADC value channel %d: %d\r\n", (i % number_of_adc_channels), p_event->data.done.p_buffer[i]);
+            NRF_LOG_INFO("ADC value channel %d: %d\r\n", (i % number_of_adc_channels), p_event->data.done.p_buffer[i]);
         }
     adc_event_counter++;
     }
     APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
 
-    LEDS_INVERT(BSP_LED_0_MASK);
+    bsp_board_led_invert(BSP_BOARD_LED_0);
 }
 
 void timer_handler(nrf_timer_event_t event_type, void* p_context)
@@ -109,11 +111,13 @@ void adc_sampling_event_init(void)
     err_code = nrf_drv_ppi_init();
     APP_ERROR_CHECK(err_code);
 
-    err_code = nrf_drv_timer_init(&m_timer, NULL, timer_handler);
+    nrf_drv_timer_config_t timer_config = NRF_DRV_TIMER_DEFAULT_CONFIG;
+    timer_config.frequency = NRF_TIMER_FREQ_31250Hz;
+    err_code = nrf_drv_timer_init(&m_timer, &timer_config, timer_handler);
     APP_ERROR_CHECK(err_code);
 
     /* setup m_timer for compare event */
-    uint32_t ticks = ADC_SAMPLE_RATE_DIVIDER;
+    uint32_t ticks = nrf_drv_timer_ms_to_ticks(&m_timer,ADC_SAMPLE_RATE);
     nrf_drv_timer_extended_compare(&m_timer, NRF_TIMER_CC_CHANNEL0, ticks, NRF_TIMER_SHORT_COMPARE0_CLEAR_MASK, true);
     nrf_drv_timer_enable(&m_timer);
 
@@ -128,20 +132,20 @@ void adc_sampling_event_init(void)
     APP_ERROR_CHECK(err_code);
 }
 
+
 /**
  * @brief Function for main application entry.
  */
 int main(void)
 {
-    LEDS_CONFIGURE(BSP_LED_0_MASK);
-    LEDS_OFF(BSP_LED_0_MASK);
+    bsp_board_leds_init();
 
     adc_sampling_event_init();
     adc_config();
     adc_sampling_event_enable();
-    UNUSED_RETURN_VALUE(NRF_LOG_INIT());
+    APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
 
-    NRF_LOG_PRINTF("    ADC example\r\n");
+    NRF_LOG_INFO("    ADC example\r\n");
 
     APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
 	
@@ -150,6 +154,7 @@ int main(void)
         __WFE();    
         __SEV();
         __WFE();
+        NRF_LOG_FLUSH();
     }
 }
 /** @} */

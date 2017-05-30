@@ -5,23 +5,23 @@ ble_app_uart_adc_simple example
  
 Requirements
 ------------
-- nRF5 SDK version 11.0.0
+- nRF5 SDK version 12.2.0
 - nRF51-DK
 
-To compile it, clone the repository in the \nRF5_SDK_11.0.0_89a8197\examples\ble_peripheral\ folder.  If you download the zip, place the ble_app_uart_adc_button_triggered folder into the \nRF5_SDK_11.0.0_89a8197\examples\ble_peripheral\ folder.
+To compile it, clone the repository in the \nRF5_SDK_12.2.0_f012efa\examples\ble_peripheral\ folder.  If you download the zip, place the ble_app_uart_adc_button_triggered folder into the \nRF5_SDK_12.2.0_f012efa\examples\ble_peripheral\ folder.
 
 Documentation
 -----------------
 - Perhipheral: nRF51 ADC
-- Compatibility: nRF51 rev 3, nRF5 SDK 11.0.0
+- Compatibility: nRF51 rev 3, nRF5 SDK 12.2.0
 - Softdevice used: 130 2.0.x
   
-This example is basically the ble_app_uart example in nRF5 SDK 11.0.0 with nRF51 ADC addon functionality. The example works as follows:
+This example is basically the ble_app_uart example in nRF5 SDK 12.2.0 with nRF51 ADC addon functionality. The example works as follows:
 - Softdevice and modules are initialized, UART is set up, adc is configured to sample on analog input pin AIN2 (P0.01). ADC buffer size is set to 4 samples.
 - ADC samples 4 times a second (see main loop). Code execution is in busy waiting loop (with calling nrf_delay_ms) while not sampling.
 - When ADC buffer is full, the nrf_drv_adc driver calls the application in function adc_event_handler and the ADC values are printed on UART.
 
-The UART output can be seen by connecting with e.g. Realterm UART terminal program for PC (when nRF51-DK connected to PC via USB) with the UART settings configured in the uart_init function, which is also described in the ble_app_uart documentation at http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v11.0.0/ble_sdk_app_nus_eval.html?cp=6_0_0_4_2_2_18_2#project_uart_nus_eval_test
+The UART output can be seen by connecting with e.g. Realterm UART terminal program for PC (when nRF51-DK connected to PC via USB) with the UART settings configured in the uart_init function, which is also described in the ble_app_uart documentation at http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v12.2.0/ble_sdk_app_nus_eval.html?cp=4_0_2_4_2_2_18_2#project_uart_nus_eval_test
   
 Indicators on the nRF51-DK board:
 - LED1 blinking: Device advertising

@@ -5,10 +5,10 @@ nrf51-ADC-examples
  
 Requirements
 ------------
-- nRF5 SDK version 11.0.0
+- nRF5 SDK version 12.2.0
 - nRF51-DK
 
-To compile it, clone the repository in the \nRF5_SDK_11.0.0_89a8197\examples\peripheral\ or \nRF5_SDK_11.0.0_89a8197\examples\ble_peripheral\ folder.  If you download the zip, place each of the project folders of this repository into the \nRF5_SDK_11.0.0_89a8197\examples\peripheral\ folder.
+To compile it, clone the repository in the \nRF5_SDK_12.2.0_f012efa\examples\peripheral\ or \nRF5_SDK_12.2.0_f012efa\examples\ble_peripheral\ folder.  If you download the zip, place each of the project folders of this repository into the \nRF5_SDK_12.2.0_f012efa\examples\peripheral\ folder.
 
 Documentation
 -----------------

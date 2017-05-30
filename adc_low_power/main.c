@@ -10,24 +10,15 @@
  *
  */
 
-/**
- * This example shows a way to obtain low current consumption using the nRF51 ADC.
- * To enabled lowest current consumption, disable UART logging (NRF_LOGGING_ENABLED)
- * and disable HFCLK crystal while sampling (HIGH_ACCURACY_ADC_ENABLE). This example
- * uses application timer (app_timer) and 32kHz crystal to obtain lowest current
- * consumption.
- * Current consumption, 1Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=0: 5uA
- * Current consumption, 100Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=0: 70uA
- * Current consumption, 100Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=1: 110uA
+/** @file
+ * @defgroup nrf_adc_example main.c
+ * @{
+ * @ingroup nrf_adc_example
+ * @brief ADC Example Application main file.
  *
- * Functionality: Three ADC channels are sampled. Sampling is triggered on app_timer
- * event. When sampling is triggered all three configured channels are sampled. 
- * adc_event_handler is called when 6 samples are collected as adc buffer size is 
- * set to 6.
- * nRF51-DK LED 1: Toggles on every app_timer event and adc sampling trigger.
- * nRF51-DK LED 2: Toggles on every adc callback
+ * This file contains the source code for a sample application using the ADC driver.
  */
- 
+
 #include "nrf.h"
 #include <stdbool.h>
 #include <stdint.h>
@@ -35,23 +26,27 @@
 #include "nrf_drv_adc.h"
 #include "nordic_common.h"
 #include "boards.h"
+#define NRF_LOG_MODULE_NAME "APP"
 #include "nrf_log.h"
+#include "nrf_log_ctrl.h"
 #include "app_error.h"
+#include "nrf_delay.h"
 #include "app_util_platform.h"
 #include "app_timer.h"
 #include "nrf_drv_clock.h"
+
 
 #define HIGH_ACCURACY_ADC_ENABLE        0               //Set to 1 to enable high accuracy ADC sampling (use HFCLK crystal while sampling). Set to 0 for lowest current consumption.
 #define NRF_LOGGING_ENABLED             0               //Set as 1 to enable logging on UART, otherwise set as 0. Comment out to enable low current consumption
 #define ADC_BUFFER_SIZE                 6               //Size of buffer for ADC samples. Buffer size should be multiple of number of adc channels located.
 
-#define APP_TIMER_PRESCALER             0                                          /**< Value of the RTC1 PRESCALER register. */
-#define APP_TIMER_OP_QUEUE_SIZE         4                                          /**< Size of timer operation queues. */
-#define TIMER1_INTERVAL                 APP_TIMER_TICKS(10, APP_TIMER_PRESCALER) /**< Defines the interval between consecutive app timer interrupts in milliseconds. */
+#define APP_TIMER_PRESCALER             0                                           /**< Value of the RTC1 PRESCALER register. */
+#define APP_TIMER_OP_QUEUE_SIZE         4                                           /**< Size of timer operation queues. */
+#define TIMER1_INTERVAL                 APP_TIMER_TICKS(10, APP_TIMER_PRESCALER)    /**< Defines the interval between consecutive app timer interrupts in milliseconds. */
 
-static nrf_adc_value_t         adc_buffer[ADC_BUFFER_SIZE]; /**< ADC buffer. */
-static uint8_t adc_event_counter = 0;
-static uint8_t number_of_adc_channels;
+static nrf_adc_value_t                  adc_buffer[ADC_BUFFER_SIZE];                /**< ADC buffer. */
+static uint8_t                          adc_event_counter = 0;
+static uint8_t                          number_of_adc_channels;
 
 APP_TIMER_DEF(m_timer1_id); 
 
@@ -70,10 +65,10 @@ static void adc_event_handler(nrf_drv_adc_evt_t const * p_event)
         if(NRF_LOGGING_ENABLED)
         {					
             uint32_t i;
-            NRF_LOG_PRINTF("  adc event counter: %d\r\n", adc_event_counter);
+            NRF_LOG_INFO("  adc event counter: %d\r\n", adc_event_counter);
             for (i = 0; i < p_event->data.done.size; i++)
             {
-                NRF_LOG_PRINTF("ADC value channel %d: %d\r\n", (i % number_of_adc_channels), p_event->data.done.p_buffer[i]);
+                NRF_LOG_INFO("ADC value channel %d: %d\r\n", (i % number_of_adc_channels), p_event->data.done.p_buffer[i]);
             }
             adc_event_counter++;
         }
@@ -115,7 +110,7 @@ static void adc_config(void)
 
 static void timer1_handler(void * p_context)
 {
-    LEDS_INVERT(BSP_LED_0_MASK);                                                                //Indicate execution of timer1 interrupt handler on LED1
+    LEDS_INVERT(BSP_LED_0_MASK);                               //Indicate execution of timer1 interrupt handler on LED1
     if(HIGH_ACCURACY_ADC_ENABLE)
     {
         nrf_drv_clock_hfclk_request(NULL);
@@ -155,7 +150,7 @@ static void clock_init(void)
     err_code = nrf_drv_clock_init();
     APP_ERROR_CHECK(err_code);
     nrf_drv_clock_lfclk_request(NULL);
-    while(!nrf_drv_clock_lfclk_is_running());                                    //Wait until the lfclk is running
+    while(!nrf_drv_clock_lfclk_is_running());                    //Wait until the lfclk is running
 }
 
 /**
@@ -173,17 +168,21 @@ int main(void)
 	
     if(NRF_LOGGING_ENABLED)
     {
-        NRF_LOG_INIT();
-        NRF_LOG_PRINTF("    ADC example\r\n");
+        APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
+        NRF_LOG_INFO("    ADC example\r\n");
     }
 	
     APP_ERROR_CHECK(nrf_drv_adc_buffer_convert(adc_buffer,ADC_BUFFER_SIZE));
 	
     while (true)
     {
-            __WFE();    
-            __SEV();
-            __WFE();
+        __WFE();    
+        __SEV();
+        __WFE();
+        if(NRF_LOGGING_ENABLED)
+        {
+            NRF_LOG_FLUSH();
+        }
     }
 }
 /** @} */
