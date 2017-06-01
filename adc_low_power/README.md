@@ -18,9 +18,9 @@ Documentation
   
 This example shows a way to obtain low current consumption using the nRF51 ADC. To enable lowest current consumption, disable UART logging (NRF_LOGGING_ENABLED) and disable HFCLK crystal while sampling (HIGH_ACCURACY_ADC_ENABLE). This example uses application timer (app_timer) and 32kHz crystal to obtain lowest current consumption.
 
-- Current consumption, 1Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=0: 5uA
-- Current consumption, 100Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=0: 70uA
-- Current consumption, 100Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=1: 110uA
+- Current consumption, 1Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=0: 4.5uA
+- Current consumption, 100Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=0: 53uA
+- Current consumption, 100Hz sampling frequency, HIGH_ACCURACY_ADC_ENABLE=1: 90uA
 
 Functionality: Three ADC channels are sampled. Sampling is triggered on app_timer event. When sampling is triggered all three configured channels are sampled. adc_event_handler is called when 6 samples are collected as adc buffer size is set to 6.
 
