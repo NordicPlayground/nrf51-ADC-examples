@@ -43,7 +43,6 @@
 #include "nrf_drv_adc.h"
 #include "app_util_platform.h"
 #include "app_scheduler.h"
-#include "app_uart.h"
 #include "app_util.h"
 
 #define NRF_LOG_MODULE_NAME "APP"
@@ -108,9 +107,6 @@
 #define APP_SCHED_MAX_EVT_SIZE			5
 #define APP_SCHED_QUEUE_SIZE			5	
 
-#define UART_TX_BUF_SIZE                1024                                         /**< UART TX buffer size. */
-#define UART_RX_BUF_SIZE                256                                          /**< UART RX buffer size. */																	 
-																	 
 void adc_sample(void);																	 
 
 static uint16_t  m_conn_handle = BLE_CONN_HANDLE_INVALID; /**< Handle of the current connection. */
@@ -287,7 +283,7 @@ static void pm_evt_handler(pm_evt_t const * p_evt)
  */
 static void battery_level_update(void)
 {	
-    printf("\r\n    Triggering battery level update...\r\n");          //Indicate on UART that Button 4 is pressed
+    NRF_LOG_INFO("\r\n    Triggering battery level update...\r\n");          //Indicate on UART that Button 4 is pressed
 	app_sched_event_put(0,0,(app_sched_event_handler_t)adc_sample);    //Put adc_sample function into the scheduler queue, which will then be executed in the main context (lowest priority) when app_sched_execute is called in the main loop
 }
 
@@ -994,49 +990,6 @@ void gatt_init(void)
     APP_ERROR_CHECK(err_code);
 }
 
-void uart_event_handle(app_uart_evt_t * p_event)
-{
-    switch (p_event->evt_type)
-    {
-        case APP_UART_COMMUNICATION_ERROR:
-            APP_ERROR_HANDLER(p_event->data.error_communication);
-            break;
-
-        case APP_UART_FIFO_ERROR:
-            APP_ERROR_HANDLER(p_event->data.error_code);
-            break;
-
-        default:
-            break;
-    }
-}
-
-/**@brief  Function for initializing the UART module.
- */
-/**@snippet [UART Initialization] */
-static void uart_init(void)
-{
-    uint32_t                     err_code;
-    const app_uart_comm_params_t comm_params =
-    {
-        RX_PIN_NUMBER,
-        TX_PIN_NUMBER,
-        RTS_PIN_NUMBER,
-        CTS_PIN_NUMBER,
-        APP_UART_FLOW_CONTROL_ENABLED,
-        false,
-        UART_BAUDRATE_BAUDRATE_Baud115200
-    };
-
-    APP_UART_FIFO_INIT( &comm_params,
-                       UART_RX_BUF_SIZE,
-                       UART_TX_BUF_SIZE,
-                       uart_event_handle,
-                       APP_IRQ_PRIORITY_LOW,
-                       err_code);
-    APP_ERROR_CHECK(err_code);
-}
-
 /**
  * @brief ADC interrupt handler.
  */
@@ -1051,23 +1004,23 @@ static void adc_event_handler(nrf_drv_adc_evt_t const * p_event)
     sd_clock_hfclk_release();			//Release the external crystal
 	
     adc_event_counter++;
-    printf("    ADC event counter: %d\r\n", adc_event_counter);
+    NRF_LOG_INFO("    ADC event counter: %d\r\n", adc_event_counter);
     if (p_event->type == NRF_DRV_ADC_EVT_DONE)
     {
         uint32_t i;
         for (i = 0; i < p_event->data.done.size; i++)
         {
-            printf("Sample value %d: %d\r\n", i+1, p_event->data.done.p_buffer[i]);
+            NRF_LOG_INFO("Sample value %d: %d\r\n", i+1, p_event->data.done.p_buffer[i]);
             adc_sum_value += p_event->data.done.p_buffer[i];                           //Sum all values in ADC buffer
         }
         adc_average_value = adc_sum_value / p_event->data.done.size;                   //Calculate average value from all samples in the ADC buffer
-        printf("Average ADC value: %d\r\n", adc_average_value);
+        NRF_LOG_INFO("Average ADC value: %d\r\n", adc_average_value);
 				
         adc_result_millivolts = ADC_RESULT_IN_MILLI_VOLTS(adc_average_value);          //Transform the average ADC value into millivolts value
-        printf("ADC result in millivolts: %d\r\n", adc_result_millivolts);
+        NRF_LOG_INFO("ADC result in millivolts: %d\r\n", adc_result_millivolts);
 				
         adc_result_percent = battery_level_in_percent(adc_result_millivolts);          //Transform the millivolts value into battery level percent.
-        printf("ADC result in percent: %d\r\n", adc_result_percent);
+        NRF_LOG_INFO("ADC result in percent: %d\r\n", adc_result_percent);
 				
         //Send the battery level over BLE
         err_code = ble_bas_battery_level_update(&m_bas, adc_result_percent);           //Send the battery level over BLE
@@ -1119,7 +1072,7 @@ void adc_sample(void)
     for (uint32_t i = 0; i < ADC_BUFFER_SIZE; i++)
     {
         while((NRF_ADC->BUSY & ADC_BUSY_BUSY_Msk) == ADC_BUSY_BUSY_Busy) {}   //Wait until the ADC is finished sampling
-        printf("Start sampling ... \r\n");
+        NRF_LOG_INFO("Start sampling ... \r\n");
         nrf_drv_adc_sample();        // Trigger ADC conversion
     }					
 }
@@ -1135,6 +1088,7 @@ int main(void)
     err_code = NRF_LOG_INIT(NULL);
     APP_ERROR_CHECK(err_code);
 
+    adc_config();
     timers_init();
     buttons_leds_init(&erase_bonds);
     ble_stack_init();
